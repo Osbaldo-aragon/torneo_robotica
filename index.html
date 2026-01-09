@@ -1,1 +1,355 @@
-<h1>Test Hola mundo</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo de Robótica Llanos 2026</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLES Y RESET --- */
+        :root {
+            --primary-color: #00d4ff; /* Cian Eléctrico */
+            --secondary-color: #ff6b00; /* Naranja Acción */
+            --dark-bg: #0b1120; /* Azul muy oscuro */
+            --card-bg: #1e293b; /* Gris azulado */
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background-color: rgba(11, 17, 32, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Degradado sobre imagen de fondo */
+            background: linear-gradient(rgba(11, 17, 32, 0.7), rgba(11, 17, 32, 0.7)), 
+                        url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-gray);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            font-weight: 700;
+            border-radius: 5px;
+            font-family: 'Orbitron', sans-serif;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary-color);
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        /* --- SECCIONES GENERALES --- */
+        .section-padding {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 10px auto;
+        }
+
+        /* --- NOTICIAS (GRID) --- */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid transparent;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .news-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #333; /* Placeholder color */
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-date {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .news-content h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        /* --- REGLAMENTOS --- */
+        .rules-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .rule-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .rule-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .rule-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #020617;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .social-icons {
+            margin-bottom: 1rem;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: var(--text-gray);
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            nav ul { display: none; } /* Aquí podrías añadir un menú hamburguesa con JS */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LLANOS <span style="color:var(--secondary-color)">2026</span></div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#noticias">Noticias</a></li>
+                <li><a href="#reglamentos">Reglamentos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Ingeniería del Futuro</h1>
+            <p>El evento de robótica más grande de la región. <br> 15 y 16 de Octubre, 2026.</p>
+            <a href="#reglamentos" class="btn">Inscribir Equipo</a>
+        </div>
+    </section>
+
+    <section id="noticias" class="section-padding">
+        <h2 class="section-title">Últimas Noticias</h2>
+        <div class="news-grid">
+            <article class="news-card">
+                
+                <img src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Robótica" class="news-img">
+                <div class="news-content">
+                    <span class="news-date">09 Ene 2026</span>
+                    <h3>Apertura de Inscripciones</h3>
+                    <p>Ya puedes registrar a tu equipo para las categorías Sumo y Seguidor de Línea.</p>
+                    <a href="#" style="color:var(--primary-color); margin-top:10px; display:block;">Leer más &rarr;</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="IA" class="news-img">
+                <div class="news-content">
+                    <span class="news-date">05 Ene 2026</span>
+                    <h3>Nueva Categoría: IA</h3>
+                    <p>Este año introducimos el reto de visión artificial para robots autónomos.</p>
+                    <a href="#" style="color:var(--primary-color); margin-top:10px; display:block;">Leer más &rarr;</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a782?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Taller" class="news-img">
+                <div class="news-content">
+                    <span class="news-date">28 Dic 2025</span>
+                    <h3>Talleres Preparatorios</h3>
+                    <p>Asiste a nuestros talleres gratuitos de Arduino y programación en C++.</p>
+                    <a href="#" style="color:var(--primary-color); margin-top:10px; display:block;">Leer más &rarr;</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="reglamentos" class="section-padding" style="background-color: #0f172a;">
+        <h2 class="section-title">Reglamentos y Categorías</h2>
+        <div class="rules-container">
+            <div class="rule-item">
+                <i class="fas fa-robot rule-icon"></i>
+                <h3>SumoBot 3kg</h3>
+                <p>Combate autónomo o RC.</p>
+                <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Descargar PDF</a>
+            </div>
+            
+            <div class="rule-item">
+                <i class="fas fa-road rule-icon"></i>
+                <h3>Seguidor de Línea</h3>
+                <p>Velocidad y precisión.</p>
+                <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Descargar PDF</a>
+            </div>
+
+            <div class="rule-item">
+                <i class="fas fa-fighter-jet rule-icon"></i>
+                <h3>Drones</h3>
+                <p>Carrera de obstáculos aérea.</p>
+                <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Descargar PDF</a>
+            </div>
+
+            <div class="rule-item">
+                <i class="fas fa-book rule-icon"></i>
+                <h3>General</h3>
+                <p>Normativa del evento.</p>
+                <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Descargar PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2026 Torneo de Robótica Llanos. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
