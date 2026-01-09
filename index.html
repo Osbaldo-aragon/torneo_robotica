@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torneo de Robótica Llanos 2026</title>
+    <title>Torneo de Robótica Llanos 2026 | ITSRLL</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&family=Rye&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- VARIABLES Y RESET --- */
+        /* --- PALETA DE COLORES BASADA EN EL LOGO --- */
         :root {
-            --primary-color: #00d4ff; /* Cian Eléctrico */
-            --secondary-color: #ff6b00; /* Naranja Acción */
-            --dark-bg: #0b1120; /* Azul muy oscuro */
-            --card-bg: #1e293b; /* Gris azulado */
-            --text-light: #f8fafc;
-            --text-gray: #94a3b8;
+            --brand-orange: #ff7b00; /* Naranja del atardecer */
+            --brand-cyan: #00f0ff;   /* Cian de los ojos/tech */
+            --brand-gold: #d4af37;   /* Dorado de las letras */
+            --bg-dark: #0f0a06;      /* Negro con tinte café muy oscuro */
+            --bg-card: #1c1510;      /* Café oscuro metálico */
+            --text-light: #fbebd6;   /* Blanco hueso */
         }
 
         * {
@@ -27,25 +27,26 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--dark-bg);
+            background-color: var(--bg-dark);
             color: var(--text-light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         h1, h2, h3 {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Orbitron', sans-serif; /* Tech */
             text-transform: uppercase;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: 0.3s;
+        .western-font {
+            font-family: 'Rye', serif; /* Toque Western */
         }
 
-        /* --- HEADER & NAV --- */
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- HEADER --- */
         header {
-            background-color: rgba(11, 17, 32, 0.95);
+            background: rgba(15, 10, 6, 0.95);
             padding: 1rem 5%;
             position: fixed;
             width: 100%;
@@ -54,301 +55,354 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid var(--primary-color);
-            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--brand-orange);
+            box-shadow: 0 0 15px rgba(255, 123, 0, 0.3);
         }
 
-        .logo {
-            font-size: 1.5rem;
+        .logo-text {
+            font-size: 1.2rem;
             font-weight: 900;
-            color: var(--primary-color);
-            letter-spacing: 2px;
-        }
-
-        nav ul {
+            color: var(--brand-orange);
             display: flex;
-            list-style: none;
-            gap: 2rem;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Simulación del logo si no carga la imagen */
+        .logo-img-small {
+            height: 50px;
+            width: auto;
         }
 
-        nav a:hover {
-            color: var(--primary-color);
-            text-shadow: 0 0 10px var(--primary-color);
-        }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a:hover { color: var(--brand-cyan); text-shadow: 0 0 8px var(--brand-cyan); }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION (BANNER PRINCIPAL) --- */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            /* Degradado sobre imagen de fondo */
-            background: linear-gradient(rgba(11, 17, 32, 0.7), rgba(11, 17, 32, 0.7)), 
-                        url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            position: relative;
+            /* Fondo con degradado oscuro tipo atardecer */
+            background: linear-gradient(to bottom, rgba(15, 10, 6, 0.8), rgba(15, 10, 6, 1)),
+                        url('https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); /* Imagen desierto de fondo */
             background-size: cover;
             background-position: center;
-            padding: 0 20px;
+            padding-top: 80px;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        /* Efecto de brillo detrás del logo principal */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 123, 0, 0.15) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        /* El Logo Principal Grande */
+        .main-logo {
+            max-width: 300px;
+            width: 80%;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px rgba(255, 123, 0, 0.6));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--brand-gold);
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .hero-details {
+            font-size: 1.4rem;
             margin-bottom: 2rem;
-            color: var(--text-gray);
-        }
-
-        .btn {
+            color: var(--brand-cyan);
+            font-weight: bold;
+            background: rgba(0,0,0,0.6);
             display: inline-block;
-            padding: 12px 30px;
-            background: var(--primary-color);
-            color: var(--dark-bg);
-            font-weight: 700;
+            padding: 10px 20px;
             border-radius: 5px;
+            border: 1px solid var(--brand-cyan);
+        }
+
+        .btn-glow {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, var(--brand-orange), #ff4500);
+            color: white;
+            font-weight: 900;
+            border-radius: 50px;
             font-family: 'Orbitron', sans-serif;
-            border: 2px solid var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.6);
+            border: none;
+            cursor: pointer;
         }
 
-        .btn:hover {
-            background: transparent;
-            color: var(--primary-color);
-            box-shadow: 0 0 15px var(--primary-color);
+        .btn-glow:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 69, 0, 0.9);
         }
 
-        /* --- SECCIONES GENERALES --- */
-        .section-padding {
-            padding: 80px 10%;
+        /* --- SECCIÓN ORGANIZADOR --- */
+        .organizer-bar {
+            background: var(--brand-cyan);
+            color: #000;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
+        /* --- CATEGORÍAS (TARJETAS) --- */
+        .section-padding { padding: 80px 10%; }
+        
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            position: relative;
+            color: var(--brand-orange);
         }
+        
+        .section-title span { color: var(--text-light); }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--secondary-color);
-            margin: 10px auto;
-        }
-
-        /* --- NOTICIAS (GRID) --- */
-        .news-grid {
+        .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .news-card {
-            background: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid transparent;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .news-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-color);
-        }
-
-        .news-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background-color: #333; /* Placeholder color */
-        }
-
-        .news-content {
-            padding: 1.5rem;
-        }
-
-        .news-date {
-            color: var(--secondary-color);
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        .news-content h3 {
-            margin: 10px 0;
-            font-size: 1.2rem;
-        }
-
-        /* --- REGLAMENTOS --- */
-        .rules-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .rule-item {
-            background: rgba(255, 255, 255, 0.05);
+        .cat-card {
+            background: var(--bg-card);
+            border: 1px solid #33251a;
+            border-radius: 15px;
             padding: 2rem;
-            border-radius: 10px;
             text-align: center;
-            width: 250px;
-            border: 1px solid #334155;
+            position: relative;
+            overflow: hidden;
             transition: 0.3s;
         }
 
-        .rule-item:hover {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: var(--primary-color);
+        .cat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: var(--brand-cyan);
         }
 
-        .rule-icon {
+        .cat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--brand-orange);
+            box-shadow: 0 10px 30px rgba(255, 123, 0, 0.2);
+        }
+
+        .cat-icon {
             font-size: 3rem;
-            color: var(--primary-color);
+            color: var(--brand-gold);
             margin-bottom: 1rem;
         }
 
-        .download-link {
+        .cat-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--brand-orange);
+        }
+
+        .cat-level {
             display: inline-block;
-            margin-top: 1rem;
-            color: var(--secondary-color);
+            background: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--brand-cyan);
+            margin-bottom: 1rem;
+            border: 1px solid var(--brand-cyan);
+        }
+
+        .prize-tag {
+            margin-top: 15px;
             font-weight: bold;
+            color: #4ade80; /* Verde dinero */
+            font-size: 1.1rem;
+        }
+
+        /* --- INFO DETALLADA --- */
+        .info-box {
+            background: linear-gradient(135deg, #1c1510 0%, #291e17 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--brand-orange);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-item {
+            flex: 1 1 300px;
+            margin: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            color: var(--brand-cyan);
         }
 
         /* --- FOOTER --- */
         footer {
-            background: #020617;
-            padding: 2rem 0;
+            background: #000;
+            padding: 3rem 10%;
             text-align: center;
+            border-top: 1px solid #333;
             margin-top: 4rem;
-            border-top: 1px solid #1e293b;
         }
-
-        .social-icons {
+        
+        .footer-org {
+            color: var(--brand-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
-        }
-
-        .social-icons a {
-            font-size: 1.5rem;
-            margin: 0 10px;
-            color: var(--text-gray);
-        }
-
-        .social-icons a:hover {
-            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
         }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            nav ul { display: none; } /* Aquí podrías añadir un menú hamburguesa con JS */
+            .hero h1 { font-size: 2rem; }
+            .hero-details { font-size: 1rem; }
+            nav ul { display: none; } /* En producción agregar menú móvil */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">LLANOS <span style="color:var(--secondary-color)">2026</span></div>
+        <div class="logo-text">
+            <i class="fas fa-microchip"></i> LLANOS 2026
+        </div>
         <nav>
             <ul>
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#noticias">Noticias</a></li>
-                <li><a href="#reglamentos">Reglamentos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#info">Información</a></li>
+                <li><a href="#registro" style="color:var(--brand-orange)">Registro</a></li>
             </ul>
         </nav>
     </header>
 
-    
-    <section id="hero" class="hero">
+    <section class="hero">
         <div class="hero-content">
-            <h1>Ingeniería del Futuro</h1>
-            <p>El evento de robótica más grande de la región. <br> 15 y 16 de Octubre, 2026.</p>
-            <a href="#reglamentos" class="btn">Inscribir Equipo</a>
-        </div>
-    </section>
-
-    <section id="noticias" class="section-padding">
-        <h2 class="section-title">Últimas Noticias</h2>
-        <div class="news-grid">
-            <article class="news-card">
-                
-                <img src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Robótica" class="news-img">
-                <div class="news-content">
-                    <span class="news-date">09 Ene 2026</span>
-                    <h3>Apertura de Inscripciones</h3>
-                    <p>Ya puedes registrar a tu equipo para las categorías Sumo y Seguidor de Línea.</p>
-                    <a href="#" style="color:var(--primary-color); margin-top:10px; display:block;">Leer más &rarr;</a>
-                </div>
-            </article>
-
-            <article class="news-card">
-                <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="IA" class="news-img">
-                <div class="news-content">
-                    <span class="news-date">05 Ene 2026</span>
-                    <h3>Nueva Categoría: IA</h3>
-                    <p>Este año introducimos el reto de visión artificial para robots autónomos.</p>
-                    <a href="#" style="color:var(--primary-color); margin-top:10px; display:block;">Leer más &rarr;</a>
-                </div>
-            </article>
-
-            <article class="news-card">
-                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a782?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Taller" class="news-img">
-                <div class="news-content">
-                    <span class="news-date">28 Dic 2025</span>
-                    <h3>Talleres Preparatorios</h3>
-                    <p>Asiste a nuestros talleres gratuitos de Arduino y programación en C++.</p>
-                    <a href="#" style="color:var(--primary-color); margin-top:10px; display:block;">Leer más &rarr;</a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section id="reglamentos" class="section-padding" style="background-color: #0f172a;">
-        <h2 class="section-title">Reglamentos y Categorías</h2>
-        <div class="rules-container">
-            <div class="rule-item">
-                <i class="fas fa-robot rule-icon"></i>
-                <h3>SumoBot 3kg</h3>
-                <p>Combate autónomo o RC.</p>
-                <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Descargar PDF</a>
-            </div>
+            <img src="Logo 2026.jpg" alt="Logo Torneo Llanos" class="main-logo">
             
-            <div class="rule-item">
-                <i class="fas fa-road rule-icon"></i>
-                <h3>Seguidor de Línea</h3>
-                <p>Velocidad y precisión.</p>
-                <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Descargar PDF</a>
+            <h1 class="western-font">TORNEO DE ROBÓTICA</h1>
+            <h2 style="color:var(--brand-cyan); margin-bottom: 1rem;">EDICIÓN 2026</h2>
+            
+            <div class="hero-details">
+                <i class="fas fa-calendar-alt"></i> 22 DE MAYO | <i class="fas fa-map-marker-alt"></i> GUADALUPE VICTORIA, DGO
             </div>
+            <br><br>
+            <a href="#registro" class="btn-glow">¡INSCRIPCIÓN GRATUITA!</a>
+        </div>
+    </section>
 
-            <div class="rule-item">
-                <i class="fas fa-fighter-jet rule-icon"></i>
-                <h3>Drones</h3>
-                <p>Carrera de obstáculos aérea.</p>
-                <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Descargar PDF</a>
+    <div class="organizer-bar">
+        ORGANIZADO POR: INSTITUTO TECNOLÓGICO SUPERIOR DE LA REGIÓN DE LOS LLANOS
+    </div>
+
+    <section id="categorias" class="section-padding">
+        <h2 class="section-title">Categorías <span class="western-font">de Competencia</span></h2>
+        
+        <div class="categories-grid">
+            <article class="cat-card">
+                <div class="cat-icon"><i class="fas fa-road"></i></div>
+                <h3 class="cat-title">Seguidor de Línea</h3>
+                <span class="cat-level">NIVEL: AMATEUR</span>
+                <p>Velocidad y precisión en pista. Robots autónomos siguiendo trazos complejos.</p>
+                <div class="prize-tag"><i class="fas fa-trophy"></i> PREMIO EN EFECTIVO AL 1° LUGAR</div>
+            </article>
+
+            <article class="cat-card">
+                <div class="cat-icon"><i class="fas fa-robot"></i></div>
+                <h3 class="cat-title">MiniSumo</h3>
+                <span class="cat-level" style="border-color:var(--brand-orange); color:var(--brand-orange)">NIVEL: SEMI PRO</span>
+                <p>Combate de fuerza y estrategia. Saca al oponente del dohyo.</p>
+                <div class="prize-tag"><i class="fas fa-trophy"></i> PREMIO EN EFECTIVO AL 1° LUGAR</div>
+            </article>
+
+            <article class="cat-card">
+                <div class="cat-icon"><i class="fas fa-futbol"></i></div>
+                <h3 class="cat-title">Fútbol Sumo</h3>
+                <span class="cat-level" style="border-color:var(--brand-orange); color:var(--brand-orange)">NIVEL: SEMI PRO</span>
+                <p>Trabajo en equipo y control. 2 vs 2 anotando goles con robots.</p>
+                <div class="prize-tag"><i class="fas fa-trophy"></i> PREMIO EN EFECTIVO AL 1° LUGAR</div>
+            </article>
+        </div>
+    </section>
+
+    <section id="info" class="section-padding" style="background: #150f0a;">
+        <h2 class="section-title">Detalles del Evento</h2>
+        
+        <div class="info-box">
+            <div class="info-item">
+                <i class="fas fa-university info-icon"></i>
+                <div>
+                    <h4>Sede Oficial</h4>
+                    <p>Guadalupe Victoria, Durango.</p>
+                </div>
             </div>
-
-            <div class="rule-item">
-                <i class="fas fa-book rule-icon"></i>
-                <h3>General</h3>
-                <p>Normativa del evento.</p>
-                <a href="#" class="download-link"><i class="fas fa-file-pdf"></i> Descargar PDF</a>
+            <div class="info-item">
+                <i class="fas fa-ticket-alt info-icon"></i>
+                <div>
+                    <h4>Costo de Entrada</h4>
+                    <p style="color: #4ade80; font-weight:bold;">¡TOTALMENTE GRATIS!</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-award info-icon"></i>
+                <div>
+                    <h4>Premios</h4>
+                    <p>Efectivo para campeones y reconocimientos oficiales.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer id="contacto">
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+    <section id="registro" style="text-align: center; padding: 80px 20px; background: linear-gradient(to top, #000, #1c1510);">
+        <h2 style="font-size: 2rem; margin-bottom: 20px; color: var(--brand-orange);">¿Tienes lo que se necesita?</h2>
+        <p style="margin-bottom: 30px; font-size: 1.2rem;">Las inscripciones están abiertas. Representa a tu institución.</p>
+        <button class="btn-glow" style="filter: hue-rotate(180deg);">REGISTRAR EQUIPO AHORA</button>
+    </section>
+
+    <footer>
+        <div class="footer-org">ITSRLL 2026</div>
+        <p style="color: #666;">Torneo de Robótica Llanos &copy; 2026</p>
+        <p style="color: #444; font-size: 0.9rem; margin-top: 10px;">Diseñado para la comunidad maker de Durango</p>
+        <div style="margin-top: 20px;">
+            <a href="#" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-instagram fa-lg"></i></a>
         </div>
-        <p>&copy; 2026 Torneo de Robótica Llanos. Todos los derechos reservados.</p>
     </footer>
 
 </body>
