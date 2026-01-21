@@ -6,7 +6,7 @@
     <title>Torneo de Robótica Llanos 2026 | ITSRLL</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&family=Rye&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* --- PALETA DE COLORES (Cyber-Western) --- */
@@ -33,7 +33,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Orbitron', sans-serif; /* Tech */
             text-transform: uppercase;
         }
@@ -90,7 +90,7 @@
 
         .hero-content {
             z-index: 2;
-            max-width: 800px;
+            max-width: 900px;
             padding: 20px;
         }
 
@@ -110,10 +110,11 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
             color: var(--brand-gold);
             text-shadow: 2px 2px 0px #000;
+            line-height: 1.2;
         }
 
         .hero-details {
@@ -187,6 +188,9 @@
             position: relative;
             overflow: hidden;
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .cat-card::before {
@@ -225,11 +229,36 @@
             border: 1px solid var(--brand-cyan);
         }
 
-        .prize-tag {
-            margin-top: 15px;
+        .prize-list {
+            list-style: none;
+            font-size: 0.9rem;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        .prize-list li {
+            margin-bottom: 5px;
+            color: #ddd;
+        }
+        .prize-highlight {
+            color: #4ade80;
             font-weight: bold;
-            color: #4ade80; /* Verde dinero */
-            font-size: 1.1rem;
+        }
+
+        .manual-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            border: 1px solid var(--brand-orange);
+            color: var(--brand-orange);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            border-radius: 5px;
+        }
+        .manual-btn:hover {
+            background: var(--brand-orange);
+            color: #000;
         }
 
         /* --- INFO DETALLADA --- */
@@ -276,7 +305,7 @@
 
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 1.8rem; }
             .hero-details { font-size: 1rem; }
             nav ul { display: none; }
         }
@@ -302,7 +331,7 @@
         <div class="hero-content">
             <img src="logo_1.gif" alt="Logo Torneo Llanos 2026" class="main-logo">
             
-            <h1 class="western-font">TORNEO DE ROBÓTICA</h1>
+            <h1 class="western-font">EL TORNEO MÁS ESPERADO EN DURANGO</h1>
             <h2 style="color:var(--brand-cyan); margin-bottom: 1rem;">EDICIÓN 2026</h2>
             
             <div class="hero-details">
@@ -314,7 +343,7 @@
     </section>
 
     <div class="organizer-bar">
-        ORGANIZADO POR: INSTITUTO TECNOLÓGICO SUPERIOR DE LA REGIÓN DE LOS LLANOS
+        ORGANIZADO POR: CLUB DE ROBÓTICA LLANEROS ITSRLL
     </div>
 
     <section id="categorias" class="section-padding">
@@ -322,27 +351,60 @@
         
         <div class="categories-grid">
             <article class="cat-card">
-                <div class="cat-icon"><i class="fas fa-road"></i></div>
-                <h3 class="cat-title">Seguidor de Línea</h3>
-                <span class="cat-level">NIVEL: AMATEUR</span>
-                <p>Velocidad y precisión en pista. Robots autónomos siguiendo trazos complejos.</p>
-                <div class="prize-tag"><i class="fas fa-trophy"></i> PREMIO EN EFECTIVO AL 1° LUGAR</div>
+                <div>
+                    <div class="cat-icon"><i class="fas fa-road"></i></div>
+                    <h3 class="cat-title">Seguidor de Línea</h3>
+                    <span class="cat-level">NIVEL: AMATEUR</span>
+                    <p>Velocidad y precisión en pista. Robots autónomos siguiendo trazos complejos.</p>
+                </div>
+                
+                <ul class="prize-list">
+                    <li><i class="fas fa-trophy" style="color:#ffd700"></i> 1er: <span class="prize-highlight">$3,000</span></li>
+                    <li><i class="fas fa-medal" style="color:#c0c0c0"></i> 2do: <span class="prize-highlight">$2,000</span></li>
+                    <li><i class="fas fa-medal" style="color:#cd7f32"></i> 3er: <span class="prize-highlight">$1,000</span></li>
+                </ul>
+
+                <a href="https://osbaldo-aragon.github.io/torneo_robotica/manuales_2025/seguidor_2025" target="_blank" class="manual-btn">
+                    <i class="fas fa-book"></i> VER REGLAMENTO
+                </a>
             </article>
 
             <article class="cat-card">
-                <div class="cat-icon"><i class="fas fa-robot"></i></div>
-                <h3 class="cat-title">MiniSumo</h3>
-                <span class="cat-level" style="border-color:var(--brand-orange); color:var(--brand-orange)">NIVEL: SEMI PRO</span>
-                <p>Combate de fuerza y estrategia. Saca al oponente del dohyo.</p>
-                <div class="prize-tag"><i class="fas fa-trophy"></i> PREMIO EN EFECTIVO AL 1° LUGAR</div>
+                <div>
+                    <div class="cat-icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="cat-title">MiniSumo</h3>
+                    <span class="cat-level" style="border-color:var(--brand-orange); color:var(--brand-orange)">NIVEL: SEMI PRO</span>
+                    <p>Combate de fuerza y estrategia. Saca al oponente del dohyo.</p>
+                </div>
+
+                <ul class="prize-list">
+                    <li><i class="fas fa-trophy" style="color:#ffd700"></i> 1er: <span class="prize-highlight">$3,000</span></li>
+                    <li><i class="fas fa-medal" style="color:#c0c0c0"></i> 2do: <span class="prize-highlight">$2,000</span></li>
+                    <li><i class="fas fa-medal" style="color:#cd7f32"></i> 3er: <span class="prize-highlight">$1,000</span></li>
+                </ul>
+
+                <a href="https://osbaldo-aragon.github.io/torneo_robotica/manuales_2025/sumo_2025" target="_blank" class="manual-btn">
+                    <i class="fas fa-book"></i> VER REGLAMENTO
+                </a>
             </article>
 
             <article class="cat-card">
-                <div class="cat-icon"><i class="fas fa-futbol"></i></div>
-                <h3 class="cat-title">Fútbol Sumo</h3>
-                <span class="cat-level" style="border-color:var(--brand-orange); color:var(--brand-orange)">NIVEL: SEMI PRO</span>
-                <p>Trabajo en equipo y control. 2 vs 2 anotando goles con robots.</p>
-                <div class="prize-tag"><i class="fas fa-trophy"></i> PREMIO EN EFECTIVO AL 1° LUGAR</div>
+                <div>
+                    <div class="cat-icon"><i class="fas fa-futbol"></i></div>
+                    <h3 class="cat-title">Fútbol Sumo</h3>
+                    <span class="cat-level" style="border-color:var(--brand-orange); color:var(--brand-orange)">NIVEL: SEMI PRO</span>
+                    <p>Trabajo en equipo y control. 2 vs 2 anotando goles con robots.</p>
+                </div>
+
+                <ul class="prize-list">
+                    <li><i class="fas fa-trophy" style="color:#ffd700"></i> 1er: <span class="prize-highlight">$3,000</span></li>
+                    <li><i class="fas fa-medal" style="color:#c0c0c0"></i> 2do: <span class="prize-highlight">$2,000</span></li>
+                    <li><i class="fas fa-medal" style="color:#cd7f32"></i> 3er: <span class="prize-highlight">$1,000</span></li>
+                </ul>
+
+                <a href="https://osbaldo-aragon.github.io/torneo_robotica/manuales_2025/futbol_2025" target="_blank" class="manual-btn">
+                    <i class="fas fa-book"></i> VER REGLAMENTO
+                </a>
             </article>
         </div>
     </section>
@@ -369,7 +431,7 @@
                 <i class="fas fa-award info-icon"></i>
                 <div>
                     <h4>Premios</h4>
-                    <p>Efectivo para campeones y reconocimientos oficiales.</p>
+                    <p>Efectivo para los ganadores y <br><strong>reconocimiento de participación oficial</strong>.</p>
                 </div>
             </div>
         </div>
@@ -378,16 +440,19 @@
     <section id="registro" style="text-align: center; padding: 80px 20px; background: linear-gradient(to top, #000, #1c1510);">
         <h2 style="font-size: 2rem; margin-bottom: 20px; color: var(--brand-orange);">¿Tienes lo que se necesita?</h2>
         <p style="margin-bottom: 30px; font-size: 1.2rem;">Las inscripciones están abiertas. Representa a tu institución.</p>
-        <button class="btn-glow" style="filter: hue-rotate(180deg);">REGISTRAR EQUIPO AHORA</button>
+        
+        <a href="https://forms.office.com/r/Y033JAEwVZ" target="_blank" class="btn-glow" style="filter: hue-rotate(180deg); text-decoration: none;">REGISTRAR EQUIPO AHORA</a>
     </section>
 
     <footer>
-        <div class="footer-org">ITSRLL 2026</div>
+        <div class="footer-org">Academia de Ingeniería Mecatrónica ITSRLL</div>
         <p style="color: #666;">Torneo de Robótica Llanos &copy; 2026</p>
         <p style="color: #444; font-size: 0.9rem; margin-top: 10px;">Diseñado para la comunidad maker de Durango</p>
+        
         <div style="margin-top: 20px;">
-            <a href="#" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-facebook fa-lg"></i></a>
-            <a href="#" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://www.facebook.com/MecaITSRLL" target="_blank" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="https://www.instagram.com/mecatronica_tmo" target="_blank" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://www.tiktok.com/@mecallanos" target="_blank" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fa-brands fa-tiktok fa-lg"></i></a>
         </div>
     </footer>
 
