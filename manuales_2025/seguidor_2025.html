@@ -3,215 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reglamento Seguidor de Línea 2026 - Torneo de Robótica Llanos</title>
+    <title>Reglamento Seguidor de Línea 2026 | ITSRLL</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&family=Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
+        /* --- PALETA DE COLORES (Cyber-Western) --- */
         :root {
-            --primary-color: #1a237e; /* Azul oscuro institucional */
-            --accent-color: #c62828; /* Rojo TecNM */
-            --text-color: #333;
-            --bg-color: #f4f4f4;
-            --light-accent: #e8eaf6;
+            --brand-orange: #ff7b00; 
+            --brand-cyan: #00f0ff;   
+            --brand-gold: #d4af37;   
+            --bg-dark: #0f0a06;      
+            --bg-card: #1c1510;      
+            --text-light: #fbebd6;   
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* Header y Navegación */
+        h1, h2, h3, h4 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .western-font {
+            font-family: 'Rye', serif;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- HEADER SIMPLIFICADO --- */
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            background: rgba(15, 10, 6, 0.98);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--brand-orange);
+            box-shadow: 0 0 15px rgba(255, 123, 0, 0.3);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        header p {
-            margin: 10px 0 0;
+        .logo-text {
             font-size: 1.2rem;
-            opacity: 0.9;
+            font-weight: 900;
+            color: var(--brand-orange);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .top-bar {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: right;
-            padding-right: 5%;
+        .nav-link {
+            color: var(--brand-cyan);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover { text-shadow: 0 0 8px var(--brand-cyan); }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 40px;
+            padding: 20px;
+        }
+
+        /* --- BARRA DE DESCARGA & NOTICIAS --- */
+        .status-bar {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--brand-cyan);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-bar::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 5px; height: 100%;
+            background: var(--brand-cyan);
         }
 
         .btn-download {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 4px;
+            display: inline-block;
+            background: var(--brand-orange);
+            color: #000;
+            padding: 10px 20px;
             font-weight: bold;
-            font-size: 0.9rem;
-            transition: background 0.3s;
+            font-family: 'Orbitron', sans-serif;
+            border-radius: 4px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
         }
 
         .btn-download:hover {
-            background-color: #8e0000;
+            background: var(--brand-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
         }
 
-        /* Contenedor Principal */
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        /* --- TÍTULOS DE SECCIÓN --- */
+        .doc-title {
+            font-size: 2.5rem;
+            color: var(--brand-gold);
+            text-shadow: 2px 2px 0 #000;
+            margin-bottom: 10px;
+            text-align: center;
         }
 
-        /* Sección de Noticias */
-        .news-section {
-            background-color: #fff3cd;
-            border-left: 6px solid #ffecb5;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 4px;
-        }
-
-        .news-section h3 {
-            margin-top: 0;
-            color: #856404;
-        }
-
-        /* Estilos de Contenido */
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--light-accent);
+        .section-header {
+            color: var(--brand-orange);
+            border-bottom: 1px solid var(--brand-cyan);
             padding-bottom: 10px;
-            margin-top: 40px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
         }
 
-        h3 {
-            color: #444;
-            margin-top: 25px;
-        }
+        h3 { color: var(--brand-cyan); margin-top: 30px; font-size: 1.3rem; }
 
-        ul, ol {
-            margin-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
+        /* --- TEXTO Y LISTAS --- */
+        p { margin-bottom: 15px; text-align: justify; }
+        
+        ul, ol { margin-left: 20px; margin-bottom: 20px; }
+        
+        li { margin-bottom: 8px; }
+        
+        li::marker { color: var(--brand-orange); }
 
         .highlight {
+            color: var(--brand-gold);
             font-weight: bold;
-            color: var(--accent-color);
         }
 
-        /* Tablas */
+        /* --- TABLAS CYBER --- */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
+            margin: 30px 0;
+            background: rgba(28, 21, 16, 0.8);
+            border: 1px solid #333;
         }
 
         th {
-            background-color: var(--primary-color);
-            color: white;
+            background: rgba(255, 123, 0, 0.2);
+            color: var(--brand-orange);
+            padding: 15px;
+            border: 1px solid var(--brand-orange);
+            text-align: left;
+            font-family: 'Orbitron', sans-serif;
         }
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+        td {
+            padding: 12px;
+            border: 1px solid #444;
         }
 
-        /* Imágenes */
+        tr:hover td {
+            background: rgba(0, 240, 255, 0.05);
+        }
+
+        /* --- IMÁGENES --- */
         .img-container {
             text-align: center;
-            margin: 30px 0;
+            margin: 40px 0;
+            background: var(--bg-card);
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #33251a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         img {
             max-width: 100%;
             height: auto;
             border-radius: 4px;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid #444;
         }
 
         .caption {
+            display: block;
+            margin-top: 10px;
+            color: #888;
             font-size: 0.9rem;
-            color: #666;
-            margin-top: 5px;
             font-style: italic;
+            font-family: 'Roboto', sans-serif;
         }
 
-        /* Footer */
+        /* --- FOOTER --- */
         footer {
+            background: #000;
+            padding: 3rem 10%;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            background-color: #333;
-            color: #aaa;
-            font-size: 0.9rem;
+            border-top: 1px solid #333;
+            margin-top: 4rem;
         }
         
-        footer a {
-            color: white;
-            text-decoration: none;
+        .footer-org {
+            color: var(--brand-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
         }
 
-        /* Responsivo */
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-                margin: 10px;
-            }
-            header h1 {
-                font-size: 1.8rem;
-            }
+            .doc-title { font-size: 1.8rem; }
+            .section-header { font-size: 1.5rem; }
+            .container { padding: 10px; margin-top: 80px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <span>Documentación Oficial 2026 &nbsp;|&nbsp; </span>
-        <a href="reglamento.pdf" class="btn-download" download>📥 Descargar Reglamento (PDF)</a>
-    </div>
-
     <header>
-        <h1>Seguidor de Línea Amateur</h1>
-        <p>Torneo de Robótica Llanos 2026 - TecNM</p>
+        <div class="logo-text">
+            <i class="fas fa-file-alt"></i> REGLAMENTO OFICIAL
+        </div>
+        <a href="index.html" class="nav-link"><i class="fas fa-arrow-left"></i> VOLVER AL INICIO</a>
     </header>
 
     <div class="container">
+        
+        <h1 class="doc-title western-font">SEGUIDOR DE LÍNEA</h1>
+        <p style="text-align: center; color: var(--brand-cyan); letter-spacing: 2px;">CATEGORÍA AMATEUR | 2026</p>
 
-        <section id="noticias" class="news-section">
-            <h3>📢 Bitácora de Cambios y Noticias</h3>
-            <p><strong>Última actualización:</strong> Enero 2026</p>
-            <ul>
+        <div class="status-bar">
+            <h3 style="margin-top: 0; color: var(--brand-gold);"><i class="fas fa-bullhorn"></i> BITÁCORA DE CAMBIOS</h3>
+            [cite_start]<p style="font-size: 0.9rem; margin-bottom: 5px;"><strong>Última actualización:</strong> Enero 2026 [cite: 6]</p>
+            <ul style="font-size: 0.9rem;">
                 <li>Publicación oficial del reglamento para la edición 2026.</li>
-                <li>Se confirman las dimensiones de la pista y el tipo de sensores permitidos.</li>
-                <li><em>Este espacio se actualizará si existen fe de erratas o avisos importantes antes del torneo.</em></li>
+                <li>Confirmación de dimensiones de pista y lista de sensores permitidos.</li>
+                <li><em>Cualquier fe de erratas se publicará en este recuadro.</em></li>
             </ul>
-        </section>
+            <a href="REGLAS_SEGUIDOR_2026.pdf" class="btn-download" download>
+                <i class="fas fa-file-pdf"></i> DESCARGAR PDF OFICIAL
+            </a>
+        </div>
 
-        <section id="definicion">
-            <h2>1. Definición de la Competencia</h2>
-            <p>La competencia está dirigida a entusiastas y estudiantes interesados en la robótica. [cite_start]El objetivo es que los robots recorran un circuito predefinido en el menor tiempo posible, siguiendo una línea de referencia sin salirse de la pista[cite: 18, 19].</p>
+        <div id="definicion">
+            <h2 class="section-header">1. Definición de la Competencia</h2>
+            [cite_start]<p>La competencia está dirigida a entusiastas y estudiantes interesados en la robótica[cite: 18]. [cite_start]El objetivo es que los robots recorran un circuito predefinido en el menor tiempo posible, siguiendo una línea de referencia sin salirse de la pista[cite: 19].</p>
 
             <h3>1.1 Dimensiones y Peso</h3>
             <ul>
@@ -221,42 +270,42 @@
             </ul>
 
             <h3>1.2 Medición del Tiempo</h3>
-            <p>El tiempo oficial inicia y termina cuando el punto más adelantado del chasis cruza las líneas de salida y meta respectivamente. [cite_start]Se utilizará un sistema electrónico de cronometraje[cite: 29, 30, 46].</p>
+            [cite_start]<p>El tiempo oficial inicia y termina cuando el punto más adelantado del chasis cruza las líneas de salida y meta respectivamente[cite: 29, 30]. [cite_start]Se utilizará un sistema electrónico de cronometraje[cite: 46].</p>
             
             <div class="img-container">
                 <img src="imagen_1.jpg" alt="Dispositivo de medición de tiempos">
-                [cite_start]<div class="caption">Figura 1. Dispositivo de medición de tiempos (Ref. Reglamento oficial) [cite: 34]</div>
+                <span class="caption">Figura 1. Dispositivo de medición de tiempos. [cite_start]Altura ref: 2.5cm [cite: 35, 57]</span>
             </div>
 
             <h3>1.3 Límite de Tiempo</h3>
-            [cite_start]<p>El tiempo máximo para completar el recorrido es de <strong>3 minutos por intento</strong>[cite: 37]. Si no se completa, se registra como DNF (Did Not Finish).</p>
-        </section>
+            [cite_start]<p>El tiempo máximo para completar el recorrido es de <strong>3 minutos por intento</strong>[cite: 37]. [cite_start]Si no se completa, se registra como DNF (Did Not Finish)[cite: 42].</p>
+        </div>
 
-        <section id="desarrollo">
-            <h2>1.6 Desarrollo de la Competencia</h2>
+        <div id="desarrollo">
+            <h2 class="section-header">1.6 Desarrollo de la Competencia</h2>
             <p>La competencia se divide en dos etapas:</p>
             <ol>
                 <li><strong>Clasificación (180 min):</strong> Dividida en dos fases de 90 minutos. [cite_start]Los robots buscan su mejor tiempo válido[cite: 72].</li>
-                <li><strong>Eliminatoria:</strong> Acceden los 8 mejores tiempos. [cite_start]Se compite en llaves (1 vs 8, 2 vs 7, etc.) a un solo intento por enfrentamiento[cite: 87, 89, 90].</li>
+                [cite_start]<li><strong>Eliminatoria:</strong> Acceden los 8 mejores tiempos[cite: 87]. [cite_start]Se compite en llaves (1 vs 8, 2 vs 7, etc.) a un solo intento por enfrentamiento[cite: 89, 90].</li>
             </ol>
-            <p class="highlight">Nota: Queda prohibido tocar el robot durante un intento. [cite_start]Si se toca, es DNF automático[cite: 67].</p>
-        </section>
+            <p class="highlight">⚠️ Nota: Queda prohibido tocar el robot durante un intento. [cite_start]Si se toca, es DNF automático[cite: 67].</p>
+        </div>
 
-        <section id="robots">
-            <h2>2. Requisitos para los Robots</h2>
-            <p>El objetivo es fomentar el ingenio usando hardware estandarizado. [cite_start]El robot debe usar motorreductores TT comerciales y ruedas de plástico[cite: 97].</p>
+        <div id="robots">
+            <h2 class="section-header">2. Requisitos para los Robots</h2>
+            <p>El objetivo es fomentar el ingenio usando hardware estandarizado. [cite_start]El robot debe usar motorreductores TT comerciales y ruedas de plástico[cite: 97, 105].</p>
 
             <h3>2.1 Especificaciones Técnicas</h3>
             <ul>
-                [cite_start]<li><strong>Motores:</strong> Máximo 2 motorreductores TT (caja amarilla) sin modificaciones internas[cite: 105].</li>
-                <li><strong>Ruedas:</strong> Únicamente ruedas de plástico genéricas (rin amarillo). [cite_start]Prohibidas las llantas de goma o adherentes[cite: 106].</li>
-                [cite_start]<li><strong>Sensores:</strong> Máximo 4 sensores de línea (ej. TCRT5000, CNY70)[cite: 108, 200].</li>
-                [cite_start]<li><strong>Voltaje:</strong> Libre, bajo responsabilidad del equipo[cite: 107].</li>
+                [cite_start]<li><strong>Motores:</strong> Máximo 2 motorreductores TT (caja amarilla) sin modificaciones internas[cite: 105, 139].</li>
+                [cite_start]<li><strong>Ruedas:</strong> Únicamente ruedas de plástico genéricas (rin amarillo)[cite: 106]. [cite_start]Prohibidas las llantas de goma o adherentes[cite: 106].</li>
+                [cite_start]<li><strong>Sensores:</strong> Máximo 4 sensores de línea (ej. TCRT5000, CNY70)[cite: 108, 201].</li>
+                [cite_start]<li><strong>Voltaje:</strong> Libre, bajo responsabilidad del equipo (motores típicamente 3V-6V)[cite: 107].</li>
             </ul>
 
             <div class="img-container">
-                <img src="imagen_2.jpg" alt="Ejemplos de motores y ruedas permitidos">
-                [cite_start]<div class="caption">Tabla 2. Componentes de movimiento permitidos y prohibidos [cite: 122]</div>
+                <img src="imagen_2.jpg" alt="Motores y ruedas permitidos">
+                [cite_start]<span class="caption">Tabla 2. Componentes de movimiento permitidos (Motores TT y Ruedas Plásticas) [cite: 122]</span>
             </div>
 
             <h3>Tabla de Componentes Permitidos</h3>
@@ -264,7 +313,7 @@
                 <thead>
                     <tr>
                         <th>Componente</th>
-                        <th>Regla</th>
+                        <th>Regla / Observación</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -278,68 +327,76 @@
                     </tr>
                     <tr>
                         <td>Prohibiciones</td>
-                        [cite_start]<td>Turbinas, pegamentos en llantas, comunicación inalámbrica durante la carrera[cite: 117, 118, 119].</td>
+                        [cite_start]<td>Sistemas inalámbricos, dispositivos que alteren la pista, pegamentos en llantas[cite: 117, 118, 119].</td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="img-container">
-                <img src="imagen_3.jpg" alt="Ejemplos de electrónica permitida">
-                [cite_start]<div class="caption">Ejemplos de módulos electrónicos permitidos [cite: 162]</div>
+                <img src="imagen_3.jpg" alt="Electrónica permitida">
+                [cite_start]<span class="caption">Ejemplos de módulos electrónicos y baterías permitidos [cite: 162]</span>
             </div>
-        </section>
+        </div>
 
-        <section id="pista">
-            <h2>3. Requisitos para la Pista</h2>
-            <p>La pista mide <strong>1.20 m de ancho por 2.40 m de largo</strong>. Fondo negro mate y línea blanca mate de aprox. [cite_start]19 mm[cite: 230, 232].</p>
+        <div id="pista">
+            <h2 class="section-header">3. Requisitos para la Pista</h2>
+            [cite_start]<p>La pista mide <strong>1.20 m de ancho por 2.40 m de largo</strong>[cite: 230]. Fondo negro mate y línea blanca mate de aprox. [cite_start]19 mm[cite: 231, 232].</p>
 
             <div class="img-container">
-                <img src="imagen_4.jpg" alt="Diseño completo de la pista">
-                [cite_start]<div class="caption">Figura 2. Distribución oficial de la cancha [cite: 244]</div>
+                <img src="imagen_4.jpg" alt="Diseño de la pista">
+                [cite_start]<span class="caption">Figura 2. Distribución oficial de la cancha (Cruce y curvas) [cite: 244]</span>
             </div>
 
             <h3>3.2 Construcción y Materiales</h3>
-            <p>La pista se compone de segmentos modulares. Es vital respetar las uniones para garantizar la continuidad.</p>
+            <p>La pista se compone de segmentos modulares. [cite_start]Es vital respetar las uniones para garantizar la continuidad[cite: 250].</p>
             
             <div class="img-container">
-                <img src="imagen_5.jpg" alt="Segmentos y medidas de la pista">
-                [cite_start]<div class="caption">Figura 3 y 4. Detalle de segmentos y ensamblaje [cite: 270, 271]</div>
+                <img src="imagen_5.jpg" alt="Medidas de segmentos">
+                [cite_start]<span class="caption">Figuras 3 y 4. Detalle de segmentos y ensamblaje [cite: 270, 271]</span>
             </div>
 
-            [cite_start]<p><strong>Pintura Oficial:</strong> Se utiliza esmalte alquidálico industrial marca Sayer: Negro Mate (EX-1100.30) y Blanco Mate (EX-1200.30)[cite: 277, 284, 285].</p>
+            [cite_start]<p><strong>Pintura Oficial:</strong> Se utiliza esmalte alquidálico industrial marca <em>Sayer</em>: Negro Mate (EX-1100.30) y Blanco Mate (EX-1200.30)[cite: 277].</p>
             
             <div class="img-container">
-                <img src="imagen_6.jpg" alt="Latas de pintura Sayer">
-                [cite_start]<div class="caption">Figura 5. Pintura utilizada para la pista [cite: 289]</div>
+                <img src="imagen_6.jpg" alt="Pintura Sayer">
+                [cite_start]<span class="caption">Figura 5. Pintura Sayer X-TRONG especificada [cite: 289]</span>
             </div>
-        </section>
+        </div>
 
-        <section id="homologacion">
-            <h2>4. Homologación y Controversias</h2>
+        <div id="homologacion">
+            <h2 class="section-header">4. Homologación y Controversias</h2>
             <p>Antes de competir, cada robot pasará por una mesa de homologación para verificar:</p>
             <ul>
                 [cite_start]<li>Tamaño (Caja de 20x20 cm)[cite: 292].</li>
                 [cite_start]<li>Peso (Máx 500g)[cite: 293].</li>
                 [cite_start]<li>Cantidad de sensores y tipo de ruedas[cite: 294].</li>
             </ul>
-            <p>Las decisiones del juez principal son definitivas. [cite_start]Solo el capitán del equipo puede presentar aclaraciones en la mesa de controversias[cite: 296, 298].</p>
-        </section>
+            <p>Las decisiones del juez principal son definitivas. [cite_start]Solo el capitán del equipo puede presentar aclaraciones en la mesa de controversias dentro de los 5 minutos posteriores a su intento[cite: 296, 298].</p>
+        </div>
 
-        <section id="contacto">
-            <h2>6. Contacto</h2>
-            <p>Para dudas técnicas o de logística:</p>
+        <div id="contacto">
+            <h2 class="section-header">6. Contacto</h2>
+            [cite_start]<p>Para dudas técnicas o de logística[cite: 305]:</p>
             <ul>
-                [cite_start]<li><strong>Responsable de Categoría:</strong> M. en P. Brenda Rivas Fernández (<a href="mailto:brenda.rf@regionllanos.tecnm.mx">brenda.rf@regionllanos.tecnm.mx</a>)[cite: 311].</li>
-                <li><strong>Coordinador General:</strong> M.C. [cite_start]Osbaldo Aragón Banderas (<a href="mailto:osbaldo.ab@regionllanos.tecnm.mx">osbaldo.ab@regionllanos.tecnm.mx</a>)[cite: 311].</li>
+                [cite_start]<li><strong>Responsable de Categoría:</strong> M. en P. Brenda Rivas Fernández (<a style="color:var(--brand-cyan)" href="mailto:brenda.rf@regionllanos.tecnm.mx">brenda.rf@regionllanos.tecnm.mx</a>)[cite: 311].</li>
+                <li><strong>Coordinador General:</strong> M.C. [cite_start]Osbaldo Aragón Banderas (<a style="color:var(--brand-cyan)" href="mailto:osbaldo.ab@regionllanos.tecnm.mx">osbaldo.ab@regionllanos.tecnm.mx</a>)[cite: 311].</li>
             </ul>
-            [cite_start]<p><strong>Registro:</strong> <a href="https://forms.office.com/r/Y033JAEWVZ" target="_blank">Formulario Oficial</a> [cite: 308]</p>
-        </section>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://forms.office.com/r/Y033JAEWVZ" target="_blank" class="btn-download" style="background: var(--brand-cyan);">
+                    REGISTRO AL TORNEO
+                </a>
+            </div>
+        </div>
 
     </div>
 
     <footer>
-        <p>&copy; [cite_start]2026 Torneo de Robótica Llanos - TecNM México[cite: 7].</p>
-        <p><a href="https://osbaldo-aragon.github.io/torneo_robotica/">Volver a la página principal del torneo</a></p>
+        <div class="footer-org">ITSRLL 2026</div>
+        <p style="color: #666;">Torneo de Robótica Llanos &copy; 2026</p>
+        <div style="margin-top: 20px;">
+            <a href="#" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-instagram fa-lg"></i></a>
+        </div>
     </footer>
 
 </body>
