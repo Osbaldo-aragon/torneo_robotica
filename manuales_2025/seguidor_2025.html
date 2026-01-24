@@ -328,58 +328,74 @@
                </ul>
                <li>Un intento se considera oficial cuando el robot cruza la línea de salida.</li>
                <li>Al finalizar la clasificación, se tomará en cuenta únicamente el mejor tiempo válido logrado por cada robot.</li>
-               <li>Queda prohibido el uso de flash fotográfico o fuentes de luz infrarroja externas por parte del público o equipos durante un recorrido oficial, ya que pueden saturar los sensores.</li>
+               p class="highlight">⚠️ Nota: Queda prohibido tocar el robot durante un intento. [cite_start]Si se toca, es DNF automático[cite: 67].</p>
             </ul>
-            
-        </div>
 
-        <div id="desarrollo">
-            <h2 class="section-header">1.6 Desarrollo de la Competencia</h2>
-            <p>La competencia se divide en dos etapas:</p>
-            <ol>
-                <li><strong>Clasificación (180 min):</strong> Dividida en dos fases de 90 minutos. [cite_start]Los robots buscan su mejor tiempo válido[cite: 72].</li>
-                [cite_start]<li><strong>Eliminatoria:</strong> Acceden los 8 mejores tiempos[cite: 87]. [cite_start]Se compite en llaves (1 vs 8, 2 vs 7, etc.) a un solo intento por enfrentamiento[cite: 89, 90].</li>
-            </ol>
-            <p class="highlight">⚠️ Nota: Queda prohibido tocar el robot durante un intento. [cite_start]Si se toca, es DNF automático[cite: 67].</p>
+            <h3>1.7. Etapa eliminatoria</h3>
+            <ul>
+               <li>La etapa eliminatoria se realizará únicamente si existen al menos 4 robots con tiempo válido en la clasificación.</li>
+               <li>Acceden a eliminatoria los 8 mejores robots con tiempo válido. Si hay menos de 8, acceden todos los robots con tiempo válido.</li>
+               <li>La eliminatoria se correrá por llaves con sembrado según clasificación (1 vs 8, 2 vs 7, 3 vs 6, 4 vs 5).</li>
+               <li>Cada enfrentamiento consiste en 1 intento cronometrado por robot (en el mismo circuito). Gana el robot con menor tiempo válido.</li>
+               <li>Si un robot obtiene DNF en su intento, pierde el enfrentamiento. Si ambos obtienen DNF, avanza el mejor clasificado en la fase de clasificación. Si persiste controversia, el juez podrá ordenar un intento adicional por robot.</li>
+               <li>Si solo 3 (o menos) robots obtienen tiempo válido en la clasificación, la clasificación final será por mejores tiempos y no habrá eliminatoria.</li>
+            </ul>
         </div>
+      
 
         <div id="robots">
             <h2 class="section-header">2. Requisitos para los Robots</h2>
-            <p>El objetivo es fomentar el ingenio usando hardware estandarizado. [cite_start]El robot debe usar motorreductores TT comerciales y ruedas de plástico[cite: 97, 105].</p>
+            <p>El objetivo de esta categoría es fomentar el ingenio, la calidad de la programación y la eficiencia del diseño utilizando hardware estandarizado. Para garantizar la equidad deportiva, todos los robots deben apegarse estrictamente a las especificaciones de construcción y seguridad aquí descritas. Se considera una violación al espíritu de la competencia cualquier intento de ocultar modificaciones prohibidas en los componentes homologados (motores y ruedas) o el uso de dispositivos que dañen la pista. Es responsabilidad de cada equipo asegurar que su robot cumpla con estas normas antes de presentarse a la mesa de homologación.</p>
 
-            <h3>2.1 Especificaciones Técnicas</h3>
+            <h3>2.1. Especificaciones Generales del Robot</h3>
             <ul>
-                [cite_start]<li><strong>Motores:</strong> Máximo 2 motorreductores TT (caja amarilla) sin modificaciones internas[cite: 105, 139].</li>
-                [cite_start]<li><strong>Ruedas:</strong> Únicamente ruedas de plástico genéricas (rin amarillo)[cite: 106]. [cite_start]Prohibidas las llantas de goma o adherentes[cite: 106].</li>
-                [cite_start]<li><strong>Sensores:</strong> Máximo 4 sensores de línea (ej. TCRT5000, CNY70)[cite: 108, 201].</li>
-                [cite_start]<li><strong>Voltaje:</strong> Libre, bajo responsabilidad del equipo (motores típicamente 3V-6V)[cite: 107].</li>
+                <li>El robot debe ser completamente autónomo y no puede recibir instrucciones externas durante la carrera.</li>
+                <li>Se permite el uso de hasta dos motorreductores (TT) comerciales sin modificaciones internas</li>
+                <li>Se permite el uso únicamente de ruedas de plástico genéricas (rin amarillo), no se permite el uso de llantas de goma, llantas modificadas o con sustancias pegajosas.</li>
+                <li>No se establece un límite reglamentario de voltaje. Sin embargo, debido a que los motorreductores TT comerciales operan típicamente en rangos de 3V a 6V (tolerando hasta 12V máx.), es responsabilidad exclusiva del equipo gestionar la alimentación para preservar la integridad de sus motores y garantizar la seguridad operativa durante el evento.</li>
+                <li>Se permite un máximo de cuatro sensores de línea.</li>
             </ul>
 
-            <div class="img-container">
-                <img src="imagen_2.jpg" alt="Motores y ruedas permitidos">
-                [cite_start]<span class="caption">Tabla 2. Componentes de movimiento permitidos (Motores TT y Ruedas Plásticas) [cite: 122]</span>
-            </div>
+            <h3>2.2. Restricciones del Robot</h3>
+            <P>Para asegurar una competencia más equitativa, el uso de ciertos componentes del robot estará limitado a los módulos y dispositivos especificados en la Tabla 2. Además de las siguientes restricciones.</P>
+            <ul>
+                <li><STRONG>Interferencia Inalámbrica:</STRONG> No se permite el uso de sistemas de comunicación inalámbrica.</li>
+                <li><strong>Mecanismos Prohibidos:</strong> No se permiten dispositivos que levanten o alteren la pista.</li>
+                <li><strong>Pegamentos y Sustancias Adherentes:</strong> Queda prohibido el uso de materiales que puedan mejorar artificialmente la tracción del robot.</li>
+                <li><STRONG>Interruptor de Apagado:</STRONG> Cada robot debe contar con un interruptor visible para detenerlo en caso de emergencia.</li>
+            </ul>
 
             <h3>Tabla de Componentes Permitidos</h3>
-            <table>
+           
+            <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
                 <thead>
                     <tr>
                         <th>Componente</th>
                         <th>Regla / Observación</th>
+                        <th>Ejemplo</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Sistema de Control</td>
-                        [cite_start]<td>Se permite cualquier tarjeta (Arduino, ESP32, etc.) y drivers de motores[cite: 176].</td>
+                        <td>Motores</td>
+                        <td>Se permite cualquier tarjeta (Arduino, ESP32, etc.) y drivers de motores.</td>
+                        <td style="text-align: center;">
+                            <img src="RUTA_DE_TU_IMAGEN_CONTROL.jpg" alt="Ejemplo Arduino/ESP32" style="width: 25vw; display: block; margin: auto;">
+                        </td>
                     </tr>
                     <tr>
                         <td>Alimentación</td>
-                        [cite_start]<td>Cualquier batería y regulador de voltaje permitidos[cite: 174, 175].</td>
+                        <td>Cualquier batería y regulador de voltaje permitidos.</td>
+                        <td style="text-align: center;">
+                            <img src="RUTA_DE_TU_IMAGEN_BATERIA.jpg" alt="Ejemplo Batería" style="width: 25vw; display: block; margin: auto;">
+                        </td>
                     </tr>
                     <tr>
                         <td>Prohibiciones</td>
-                        [cite_start]<td>Sistemas inalámbricos, dispositivos que alteren la pista, pegamentos en llantas[cite: 117, 118, 119].</td>
+                        <td>Sistemas inalámbricos, dispositivos que alteren la pista, pegamentos en llantas.</td>
+                        <td style="text-align: center;">
+                            <img src="RUTA_DE_TU_IMAGEN_PROHIBIDA.jpg" alt="Ejemplo Prohibiciones" style="width: 25vw; display: block; margin: auto;">
+                        </td>
                     </tr>
                 </tbody>
             </table>
