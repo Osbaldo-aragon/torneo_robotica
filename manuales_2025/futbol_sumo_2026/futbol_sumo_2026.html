@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglamento FutBol Sumo Semi-Pro 2026 | ITSRLL</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&family=Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --brand-orange: #ff7b00; 
+            --brand-cyan: #00f0ff;   
+            --brand-gold: #d4af37;   
+            --bg-dark: #0f0a06;      
+            --bg-card: #1c1510;      
+            --text-light: #fbebd6;   
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: 'Orbitron', sans-serif; text-transform: uppercase; }
+        .western-font { font-family: 'Rye', serif; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        header {
+            background: rgba(15, 10, 6, 0.98);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--brand-orange);
+            box-shadow: 0 0 15px rgba(255, 123, 0, 0.3);
+        }
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--brand-orange);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-link {
+            color: var(--brand-cyan);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .nav-link:hover { text-shadow: 0 0 8px var(--brand-cyan); }
+
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 40px;
+            padding: 20px;
+        }
+
+        .status-bar {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--brand-cyan);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .status-bar::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 5px; height: 100%;
+            background: var(--brand-cyan);
+        }
+        .btn-download {
+            display: inline-block;
+            background: var(--brand-orange);
+            color: #000;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-radius: 4px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
+        }
+        .btn-download:hover {
+            background: var(--brand-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .doc-title {
+            font-size: 2.5rem;
+            color: var(--brand-gold);
+            text-shadow: 2px 2px 0 #000;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .section-header {
+            color: var(--brand-orange);
+            border-bottom: 1px solid var(--brand-cyan);
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        h3 { color: var(--brand-cyan); margin-top: 30px; font-size: 1.3rem; }
+        h4 { color: var(--brand-gold); margin-top: 20px; font-size: 1rem; text-transform: none; font-family: 'Roboto', sans-serif; }
+        p { margin-bottom: 15px; text-align: justify; }
+        ul, ol { margin-left: 20px; margin-bottom: 20px; }
+        li { margin-bottom: 8px; }
+        li::marker { color: var(--brand-orange); }
+        .highlight { color: var(--brand-gold); font-weight: bold; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(28, 21, 16, 0.8);
+            border: 1px solid #333;
+        }
+        th {
+            background: rgba(255, 123, 0, 0.2);
+            color: var(--brand-orange);
+            padding: 15px;
+            border: 1px solid var(--brand-orange);
+            text-align: left;
+            font-family: 'Orbitron', sans-serif;
+        }
+        td { padding: 12px; border: 1px solid #444; vertical-align: top; }
+        tr:hover td { background: rgba(0, 240, 255, 0.05); }
+
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+            background: var(--bg-card);
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #33251a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #444;
+        }
+        .caption {
+            display: block;
+            margin-top: 10px;
+            color: #888;
+            font-size: 0.9rem;
+            font-style: italic;
+            font-family: 'Roboto', sans-serif;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin: 15px 0 25px;
+        }
+        .toc-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(0,240,255,0.2);
+            border-radius: 10px;
+            padding: 14px;
+        }
+        .toc-card h4 {
+            margin: 0 0 8px 0;
+            color: var(--brand-cyan);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+        .toc-card ul { margin-bottom: 0; }
+        .toc-card li { margin-bottom: 5px; font-size: 0.95rem; }
+        .note-box {
+            background: rgba(255,123,0,0.08);
+            border: 1px solid rgba(255,123,0,0.35);
+            border-left: 4px solid var(--brand-orange);
+            border-radius: 8px;
+            padding: 14px;
+            margin: 15px 0 25px;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 15px;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .contact-card h4 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            color: var(--brand-gold);
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .contact-card p { margin-bottom: 8px; text-align: left; }
+
+        footer {
+            background: #000;
+            padding: 3rem 10%;
+            text-align: center;
+            border-top: 1px solid #333;
+            margin-top: 4rem;
+        }
+        .footer-org {
+            color: var(--brand-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .doc-title { font-size: 1.8rem; }
+            .section-header { font-size: 1.5rem; }
+            .container { padding: 10px; margin-top: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">
+            <i class="fas fa-futbol"></i> REGLAMENTO FUTBOL SUMO
+        </div>
+        <a href="https://osbaldo-aragon.github.io/torneo_robotica/index.html" class="nav-link"><i class="fas fa-arrow-left"></i> VOLVER</a>
+    </header>
+
+    <div class="container">
+
+        <h1 class="doc-title western-font">FUTBOL SUMO</h1>
+        <p style="text-align: center; color: var(--brand-cyan); letter-spacing: 2px;">CATEGORÍA SEMI-PRO | 2026</p>
+
+        <div class="img-container">
+            <img src="img/img_1.jpg" alt="Portada del reglamento FutBol Sumo Semi-Pro 2026">
+            <span class="caption">Portada del reglamento oficial</span>
+        </div>
+
+        <div class="status-bar">
+            <h3 style="margin-top: 0; color: var(--brand-gold);"><i class="fas fa-bullhorn"></i> DOCUMENTO OFICIAL</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 8px;"><strong>Título:</strong> Reglamento | FutBol Sumo (Semi-Pro) | 2026</p>
+            <p style="font-size: 0.95rem; margin-bottom: 8px;"><strong>Conversión:</strong> HTML para publicación web respetando el contenido del PDF.</p>
+            <p style="font-size: 0.95rem; margin-bottom: 0;"><em>Nota: Los párrafos se mantienen continuos en HTML para que el texto se acomode automáticamente en la web.</em></p>
+            <a href="REGLAS_FUTSUMO_2026.pdf" class="btn-download" download>
+                <i class="fas fa-file-pdf"></i> DESCARGAR PDF
+            </a>
+        </div>
+
+        <div id="indice">
+            <h2 class="section-header">Índice</h2>
+            <div class="toc-grid">
+                <div class="toc-card">
+                    <h4>Secciones principales</h4>
+                    <ul>
+                        <li><a href="#sec1">1. Definición de Fut-Bol Sumo Semi-Pro</a></li>
+                        <li><a href="#sec2">2. Requisitos para los Robots</a></li>
+                        <li><a href="#sec3">3. Requisitos para la Cancha</a></li>
+                        <li><a href="#sec4">4. Desarrollo de los partidos</a></li>
+                        <li><a href="#sec5">5. Homologación</a></li>
+                        <li><a href="#sec6">6. Mesa de controversias</a></li>
+                    </ul>
+                </div>
+                <div class="toc-card">
+                    <h4>Faltas y cierre</h4>
+                    <ul>
+                        <li><a href="#sec7">7. Faltas</a></li>
+                        <li><a href="#sec8">8. Flexibilidad de las Reglas</a></li>
+                        <li><a href="#sec9">9. Responsabilidad</a></li>
+                        <li><a href="#sec10">10. Glosario de Términos</a></li>
+                        <li><a href="#sec11">11. Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="note-box">
+                <p><strong>Subsecciones del documento:</strong> 2.1 Especificaciones Generales del Robot, 2.2 Limitaciones / Restricciones del robot, 3.1 Especificaciones de portería, muros y pelota de juego, 4.1 Curso de la Competición, 4.2 Colocación del Robot, 4.3 Inicio, 4.4 Parar, Reanudar, 4.5 Reparaciones, modificaciones, interrupciones imprevistas, 7.1 Insultos, 7.2 Equipo de protección y área segura, 7.3 Amonestaciones menores, 7.4 Penalizaciones.</p>
+            </div>
+        </div>
+
+        <div id="sec1">
+            <h2 class="section-header">1. Definición de Fut-Bol Sumo Semi-Pro</h2>
+            <p>El concurso está dirigido a estudiantes de educación media y superior que compartan la pasión por la robótica. Para participar, cada equipo debe contar con mínimo 2 integrantes y máximo 4, y apegarse a las reglas del Fut-Bol Sumo Semi-Pro, tanto en las dimensiones de la superficie de juego como en las pautas de despliegue y compromiso. Asimismo, los robots deben ajustarse a los siguientes requisitos de construcción: un peso máximo de 600g y medidas de 13 × 13 cm (sin límite de altura).</p>
+            <p>En cada encuentro se enfrentan dos equipos, cada uno con dos robots construidos de acuerdo con los lineamientos de este reglamento. El partido comienza cuando el árbitro da la señal y termina al concluir dos periodos de 2 minutos de tiempo reglamentario.</p>
+        </div>
+
+        <div id="sec2">
+            <h2 class="section-header">2. Requisitos para los Robots</h2>
+
+            <h3>2.1. Especificaciones Generales del Robot</h3>
+            <ul>
+                <li><strong>A.</strong> La tracción debe realizarse únicamente con 2 motores TT amarillos y llantas estándar con rin amarillo de plástico. No se permiten otros motores/ruedas en esta categoría. (ver tabla 1.)</li>
+                <li><strong>B.</strong> El robot debe ser controlado por cualquier tipo de comunicación inalámbrica siempre y cuando no sea susceptible a interferencia de señales que afecten el funcionamiento propio o del rival. Se admitirá cualquier diseño que no infrinja las limitaciones establecidas en el capítulo 2.2. El equipo responsable de la construcción puede elegir cualquier material y cualquier mecanismo de control.</li>
+                <li><strong>C.</strong> Dimensiones máximas, el robot debe mantenerse dentro de estas dimensiones en todo momento, no se permite extender ni desplegar elementos que sobresalgan:
+                    <ul>
+                        <li>Longitud: 13 cm</li>
+                        <li>Anchura: 13 cm</li>
+                        <li>Masa máxima: 600g</li>
+                        <li>Sin límite de altura.</li>
+                    </ul>
+                </li>
+                <li><strong>D.</strong> Movimiento en el campo:
+                    <ul>
+                        <li>En caso de que el robot pierda movilidad, ya sea por contacto con el oponente o por su propia maniobrabilidad, el operador no podrá intervenir hasta que finalice el período.</li>
+                    </ul>
+                </li>
+                <li><strong>E.</strong> Inmovilidad previa al inicio:
+                    <ul>
+                        <li>Antes de que empiece el partido, los robots deben permanecer completamente quietos en el límite del “área grande” de portería.</li>
+                    </ul>
+                </li>
+                <li><strong>F.</strong> Número identificativo:
+                    <ul>
+                        <li>Cada robot deberá exhibir visiblemente un número, proporcionado por la organización, en el exterior de su chasis.</li>
+                        <li>Este número sirve para que el árbitro identifique al robot y aparecerá en la carpeta del equipo.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="img-container">
+                <img src="img/img_2.jpg" alt="Tabla 1. Motores y llantas admitidas y no admitidas para la competencia">
+                <span class="caption">Tabla 1. Motores y llantas admitidas y no admitidas para la competencia</span>
+            </div>
+
+            <h3>2.2. Limitaciones / Restricciones del robot</h3>
+            <p>Para asegurar una competencia más equitativa, el uso de ciertos componentes del robot estará limitado a los módulos y dispositivos especificados en la Tabla 1. Además de las siguientes restricciones.</p>
+            <ul>
+                <li><strong>A. Piezas prohibidas:</strong> No se permite el uso de piezas que puedan romper o dañar la cancha. Tampoco se deben utilizar piezas diseñadas para dañar al robot del oponente ni a su operador. Los empujones y golpes normales no se consideran como intención de daño.</li>
+                <li><strong>B. Dispositivos para lanzar sustancias:</strong> Queda prohibido el uso de dispositivos que puedan almacenar y lanzar líquidos, polvos, gases u otras sustancias al oponente.</li>
+                <li><strong>C. Sustancias pegajosas:</strong> No se permite el uso de sustancias pegajosas para mejorar la tracción. Las llantas y otros componentes del robot en contacto con la cancha no deben ser capaces de levantar y sostener una hoja de papel estándar (80 g/m²) durante más de dos segundos.</li>
+                <li><strong>D. Mecanismos de contacto con la pelota:</strong> El robot no podrá incorporar ningún mecanismo ni estructura que retenga o levante la pelota del suelo. Únicamente se permite empujarla, pudiendo tener contacto con menos del 50% de su circunferencia, siempre y cuando no se limite su libre desplazamiento ni se considere que está “sujeta” o “elevada” por el robot.</li>
+                <li><strong>E. Pelotas de juego:</strong> Se utilizará una pelota de ping pong estándar, con un diámetro de 40 mm, de color naranja, distribuidas tal como se indica en el apartado 4.</li>
+            </ul>
+        </div>
+
+        <div id="sec3">
+            <h2 class="section-header">3. Requisitos para la Cancha</h2>
+            <p>El interior de la cancha se define como la superficie de juego rodeada e incluyendo las líneas de borde. Cualquier lugar fuera de esta área se denomina exterior de la cancha. A continuación, se describen los elementos y dimensiones principales:</p>
+            <ul>
+                <li><strong>A. Dimensiones y Colores</strong>
+                    <ul>
+                        <li>La cancha tendrá unas dimensiones de 1.20 m de ancho por 2.40 m de largo.</li>
+                        <li>Se dividirá en dos mitades de diferentes colores: una mitad negra y la otra blanca.</li>
+                    </ul>
+                </li>
+                <li><strong>B. Líneas de Delimitación</strong>
+                    <ul>
+                        <li>Las líneas que marcan la media cancha, el área chica y el área grande de portería serán de color rojo.</li>
+                        <li>Las porterías estarán ubicadas en los extremos de la cancha.</li>
+                    </ul>
+                </li>
+                <li><strong>C. Tolerancia</strong>
+                    <ul>
+                        <li>Para todas las dimensiones dadas, se aplicará una tolerancia del 5%, de manera que se pueda ajustar la construcción de la cancha sin alterar significativamente su funcionalidad.</li>
+                    </ul>
+                </li>
+                <li><strong>D. Referencias Adicionales</strong>
+                    <ul>
+                        <li>La superficie de la cancha (incluyendo los bordes) constituye el interior de la zona de juego.</li>
+                        <li>Todo lo que se encuentre fuera de esta área se considerará como el exterior de la cancha.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="img-container">
+                <img src="img/img_3.jpg" alt="Figura 1. Dimensiones de la cancha">
+                <span class="caption">Figura 1. Dimensiones de la cancha</span>
+            </div>
+
+            <h3>3.1. Especificaciones de portería, muros y pelota de juego</h3>
+            <ul>
+                <li><strong>A.</strong> Se jugará con 1 pelota de ping pong reglamentaria, de 40 mm de diámetro y 2,7 g de peso. El color de las pelotas será naranja.</li>
+                <li><strong>B.</strong> Paredes inclinadas: En los bordes exteriores se colocará una pared inclinada a ±45°, con una altura entre 5 a 10 cm, para mantener la pelota dentro del área de juego.</li>
+                <li><strong>C.</strong> Las porterías medirán 30 cm de ancho por 15 cm de alto, tal como se observa en la figura 2.</li>
+            </ul>
+
+            <div class="img-container">
+                <img src="img/img_4.jpg" alt="Figura 2. Dimensiones de las porterías, pelotas y muros de contención">
+                <span class="caption">Figura 2. Dimensiones de las porterías, pelotas y muros de contención</span>
+            </div>
+        </div>
+
+        <div id="sec4">
+            <h2 class="section-header">4. Desarrollo de los partidos</h2>
+            <ul>
+                <li><strong>A.</strong> Un partido consta de dos periodos de 2 minutos, cronometrados por el árbitro. Cada periodo finaliza cuando se cumpla el tiempo.</li>
+                <li><strong>B.</strong> Al concluir el primer periodo, habrá un minuto de descanso, también cronometrado por el árbitro. El segundo periodo inicia con la indicación del árbitro y con los equipos posicionados en la cancha contraria usada en el primer tiempo.</li>
+                <li><strong>C.</strong> Para iniciar cada periodo, se ubicará la pelota al centro de la cancha.</li>
+                <li><strong>D.</strong> El objetivo de cada equipo es anotar la mayor cantidad de goles posible en el tiempo determinado. Una vez que una pelota ingrese a la portería, se contabilizará como gol.</li>
+                <li><strong>E.</strong> Al finalizar cada periodo, el árbitro contará los goles de cada equipo. Al término de los dos periodos, el equipo con mayor número de goles anotados será el ganador.</li>
+                <li><strong>F.</strong> Si al concluir los dos periodos persiste un empate, se disputará un tiempo extra de 1 minuto, precedido por un descanso de 1 minuto.</li>
+                <li><strong>G.</strong> Al finalizar el tiempo extra, si el partido permanece empatado, se definirá mediante penales en la modalidad de muerte súbita con las siguientes reglas:
+                    <ul>
+                        <li>El árbitro determinará de manera aleatoria cuál equipo comenzará atacando y cuál defendiendo en el primer turno.</li>
+                        <li>Solamente un robot por equipo permanecerá en la cancha para asumir el rol de atacante o defensor.</li>
+                        <li>Se colocará una pelota en el círculo central; el defensor deberá permanecer inmóvil dentro del área chica y el atacante deberá colocarse detrás de la línea media.</li>
+                        <li>El árbitro dará la señal de inicio para el cobro de penal y contará un periodo de 15 segundos. Al término de ese tiempo, concluye el intento de cobro y no se validará ningún gol que se produzca posteriormente.</li>
+                        <li>Si el atacante anota un gol dentro de los 15 segundos, el penal finaliza de inmediato.</li>
+                        <li>A continuación, el equipo que defendió pasará a atacar siguiendo la misma dinámica.</li>
+                        <li>Se proclamará ganador el equipo que logre anotar un gol sin que el rival haya marcado en su turno.</li>
+                        <li>La colocación de los robots se observa en la figura 3.</li>
+                        <li>En caso de que la fase de muerte súbita se extienda por más de 5 minutos o los robots no puedan continuar el partido, el árbitro decidirá el ganador con base en los siguientes criterios:
+                            <ul>
+                                <li>Se considerará vencedor al equipo que cuente con el mayor número de robots en condiciones de movilidad.</li>
+                                <li>Siempre que ambos equipos estén de acuerdo, el ganador podrá definirse al azar.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="img-container">
+                <img src="img/img_5.jpg" alt="Figura 3. Ejemplo de posicionamiento de robots y pelotas en la cancha previo a penales en etapa de muerte súbita">
+                <span class="caption">Figura 3. Ejemplo de posicionamiento de robots y pelotas en la cancha previo a penales en etapa de muerte súbita</span>
+            </div>
+
+            <h3>4.1. Curso de la Competición</h3>
+            <ul>
+                <li><strong>A.</strong> Los equipos se distribuirán en grupos de acuerdo con el número total de participantes. La competencia se desarrollará bajo un sistema de grupos/cuartos de final/semifinales/finales, con el fin de proporcionar el mayor número posible de rondas para cada robot. Las decisiones de los árbitros deben ser unánimes y son definitivas. Cuestionarlas implica la descalificación.</li>
+                <li><strong>B.</strong> El orden de los equipos en los grupos se determinará de manera aleatoria, tras la apertura oficial de la competencia, y se publicará en las redes sociales de Facebook e Instagram @MecaITSRLL. Aquellos que clasifiquen desde la fase de grupos pasarán a cuartos, semifinales y finales. Si el número de participantes resulta insuficiente para conformar grupos, la competencia iniciará directamente con un sistema de eliminación “piramidal”. La posición de cada robot en la pirámide será asignada al azar.</li>
+                <li><strong>C.</strong> Durante toda la competencia, no se permiten pausas en mitad de un partido. Sin embargo, entre partidos, se autorizan reparaciones, reprogramaciones y cambios en los robots.</li>
+                <li><strong>D.</strong> Cada equipo es responsable de verificar el horario de la competencia, disponible en redes sociales y grupos del evento. Si un equipo es llamado y no se presenta dentro de los 5 minutos siguientes, ¡el robot quedará descalificado!</li>
+                <li><strong>E.</strong> Cada equipo contará con dos operadores y, opcionalmente, 2 asistentes. Solamente los operadores y 2 asistentes en el área de partido. El resto del equipo deberá quedarse en la sala o presenciar la lucha desde el público.</li>
+                <li><strong>F.</strong> La configuración del robot debe realizarse antes de colocarlo en la cancha.</li>
+                <li><strong>G.</strong> Una vez que el robot haya sido situado en la cancha, no podrá ser manipulado.</li>
+                <li><strong>H.</strong> Al finalizar el partido, los robots no deben ser tocados ni retirados hasta que el árbitro lo indique. Si se retira o manipula el robot antes de la señal del árbitro, no se aceptarán reclamaciones posteriores.</li>
+            </ul>
+
+            <div class="img-container">
+                <img src="img/img_6.jpg" alt="Figura 4. Ejemplo de posicionamiento de robots y pelota en la cancha previo al inicio de los periodos">
+                <span class="caption">Figura 4. Ejemplo de posicionamiento de robots y pelota en la cancha previo al inicio de los periodos</span>
+            </div>
+
+            <h3>4.2. Colocación del Robot</h3>
+            <ul>
+                <li><strong>A.</strong> Siguiendo las instrucciones del juez, ambos equipos colocarán sus robots de manera simultánea como se muestra en la figura 3. Una vez ubicados, el juez posicionará las pelotas y dará la señal de inicio, tras lo cual no se permitirá ningún movimiento adicional de los robots.</li>
+                <li><strong>B.</strong> El juez verificará que los robots estén correctamente colocados. En caso de que algún robot no cumpla con la posición requerida, se repetirá el proceso de ubicación.</li>
+            </ul>
+
+            <h3>4.3. Inicio</h3>
+            <p>El juez inicia cada periodo indicando el arranque. Tan pronto como los robots se enciendan, la ronda comienza inmediatamente, sin demora.</p>
+
+            <h3>4.4. Parar, Reanudar</h3>
+            <p>El encuentro se detiene y se reanuda cuando lo anuncia un juez.</p>
+
+            <h3>4.5. Reparaciones, modificaciones, interrupciones imprevistas</h3>
+            <p>Desde el momento en que un robot pasa la homologación (y está en mesas de espera) hasta que termina el encuentro, no se pueden realizar cambios del hardware en el robot y no se permiten interrupciones para ninguna de las condiciones a continuación.</p>
+            <ul>
+                <li><strong>A.</strong> El robot debe comenzar y terminar el encuentro sin ninguna modificación y no puede abandonar el área de partido por ninguna razón.</li>
+                <li><strong>B.</strong> Durante un encuentro habrá un breve descanso máximo de 5 minutos entre los partidos para limpiar el robot y las ruedas, configurar el robot y el enfrentamiento debe reanudarse.</li>
+                <li><strong>C.</strong> Cambio/carga de batería, reparaciones o el reemplazo de piezas defectuosas, pueden hacerse después de que termina el partido hasta el siguiente encuentro involucrado.</li>
+                <li><strong>D.</strong> Si un robot se rompe durante un encuentro y no puede continuar, el encuentro lo gana el robot oponente. No se permiten reparaciones.</li>
+            </ul>
+        </div>
+
+        <div id="sec5">
+            <h2 class="section-header">5. Homologación</h2>
+            <p>Cada equipo tendrá que pasar la etapa de homologación para participar con sus robots en la competición. Las etapas del proceso de homologación son:</p>
+            <p><strong>Al comienzo de la competición</strong></p>
+            <ul>
+                <li><strong>A.</strong> Se verificará si el número existe en el recubrimiento externo del robot.</li>
+                <li><strong>B.</strong> Se tomará una foto de cada robot en la que el número sea visible.</li>
+                <li><strong>C.</strong> Comprobación de las dimensiones del robot colocando un marco sin fondo de 13,2 cm x 13,2 cm sobre el robot.</li>
+                <li><strong>D.</strong> Pesaje del robot en una balanza digital. El valor máximo debe ser de 600g.</li>
+            </ul>
+            <p>La etapa de homologación concluye según los tiempos asignados por los organizadores, por lo que puede haber modificaciones para pasar la etapa de homologación dentro de los tiempos estipulados.</p>
+        </div>
+
+        <div id="sec6">
+            <h2 class="section-header">6. Mesa de controversias</h2>
+            <p>Durante la competencia, los equipos tendrán la oportunidad de presentar cualquier señalamiento sobre posibles faltas al reglamento o situaciones extraordinarias que puedan surgir. Estos señalamientos serán atendidos por el comité organizador, en conjunto con asesores y capitanes de equipos, con el objetivo de analizar la situación y llegar a una resolución justa que beneficie la equidad y el correcto desarrollo del torneo.</p>
+            <p>Cada equipo tiene el derecho a grabar sus partidos para servir como evidencia en la mesa de controversias.</p>
+        </div>
+
+        <div id="sec7">
+            <h2 class="section-header">7. Faltas</h2>
+
+            <h3>7.1. Insultos</h3>
+            <p>Un jugador que profiera palabras insultantes al oponente o a los jueces, o que coloque dispositivos de voz en un robot para pronunciar palabras insultantes o escriba palabras insultantes en el cuerpo de un robot, o realice cualquier acción insultante, está en violación de estas reglas.</p>
+
+            <h3>7.2. Equipo de protección y área segura</h3>
+            <p>Se considera una falta grave en la regulación:</p>
+            <ul>
+                <li><strong>A.</strong> El operador y/o el asistente no usa el equipo de protección durante un encuentro, en caso de que su robot tenga partes que puedan dañar su integridad, de los contrarios o del público.</li>
+            </ul>
+
+            <h3>7.3. Amonestaciones menores</h3>
+            <p>Una amonestación menor conlleva una advertencia y se declara en los siguientes casos:</p>
+            <p>El competidor ingresa a la cancha durante el encuentro sin autorización, a menos que el árbitro lo haya detenido y el concursante esté recogiendo el robot. Se considera que el competidor entra a la cancha cuando:</p>
+            <ul>
+                <li><strong>a.</strong> Alguna parte de su cuerpo toca la superficie de la cancha.</li>
+                <li><strong>b.</strong> Coloca algún dispositivo mecánico para sostenerse dentro de la cancha.</li>
+                <li><strong>c.</strong> Exige detener el partido sin una razón justificada.</li>
+                <li><strong>d.</strong> Toma más de 60 segundos para reanudar el encuentro, salvo que el juez conceda una prórroga.</li>
+                <li><strong>e.</strong> Efectúa cualquier acción contraria al espíritu de juego limpio.</li>
+                <li><strong>f.</strong> El operador y/o asistente abandona el área de espera sin notificar la razón de su partida al oficial de la competición o al árbitro.</li>
+            </ul>
+            <p>En caso de que un equipo reciba dos advertencias, se otorgará un gol al equipo contrario o, dependiendo de la gravedad de la falta cometida, el equipo infractor podría ser descalificado.</p>
+
+            <h3>7.4. Penalizaciones</h3>
+            <ul>
+                <li><strong>A.</strong> Los jugadores que violen estas reglas al realizar los actos prohibidos descritos en las Secciones 2.2 y 7.2 perderán el encuentro. El juez otorgará el partido al oponente y ordenará al infractor que se retire.</li>
+                <li><strong>B.</strong> Las violaciones menores descritas en la Sección 7.3 se acumularán. Dos de estas violaciones otorgarán un gol automático al oponente.</li>
+                <li><strong>C.</strong> Las violaciones se acumularán a lo largo de todo el encuentro (incluyendo ambos periodos).</li>
+            </ul>
+        </div>
+
+        <div id="sec8">
+            <h2 class="section-header">8. Flexibilidad de las Reglas</h2>
+            <p>Siempre que se observen el concepto y los fundamentos de las reglas, estas reglas serán lo suficientemente flexibles como para abarcar los cambios en el número de jugadores y en el contenido de los encuentros. Las modificaciones o la abolición de las reglas pueden ser realizadas por los organizadores locales del evento siempre que se publiquen antes del evento y se mantengan de manera consistente durante todo el evento.</p>
+        </div>
+
+        <div id="sec9">
+            <h2 class="section-header">9. Responsabilidad</h2>
+            <ul>
+                <li><strong>A.</strong> Los equipos participantes son siempre responsables de su propia seguridad y de la seguridad de sus robots, y son responsables de cualquier accidente causado por los miembros de su equipo o sus robots.</li>
+                <li><strong>B.</strong> La organización y los miembros del equipo organizador nunca serán responsables ni estarán obligados por ningún incidente y/o accidente causado por los equipos participantes o su equipo.</li>
+            </ul>
+        </div>
+
+        <div id="sec10">
+            <h2 class="section-header">10. Glosario de Términos</h2>
+            <ul>
+                <li><strong>Área Chica:</strong> Zona cercana a la portería delimitada por líneas rojas, donde el robot defensor tiene restricciones de movimiento durante los penales y otras situaciones específicas.</li>
+                <li><strong>Área Grande:</strong> Espacio mayor que rodea la portería, delimitado también por líneas rojas, en el cual los robots deben iniciar inmóviles antes de comenzar un partido.</li>
+                <li><strong>Homologación:</strong> Proceso obligatorio previo al inicio de la competencia, donde se verifica que los robots cumplan con las especificaciones de peso, dimensiones y otros requisitos del reglamento.</li>
+                <li><strong>Penales en Muerte Súbita:</strong> Mecanismo de desempate donde un robot ataca y otro defiende, y el ganador es el primero que anote un gol sin que el oponente lo haya logrado en su turno.</li>
+                <li><strong>Tolerancia:</strong> Margen de error permitido en las dimensiones de la cancha, robots u otros elementos. En este reglamento, se establece un 5% para ciertos parámetros.</li>
+                <li><strong>Dimensiones del Robot:</strong> Medidas máximas que un robot puede tener para participar en la competencia: 13 cm de longitud, 13 cm de ancho, sin límite de altura, y un peso máximo de 600 g.</li>
+                <li><strong>Pelota Reglamentaria:</strong> Pelota de ping pong estándar de 40 mm de diámetro y 2.7 g de peso, exclusivamente en color naranja, utilizada durante los partidos.</li>
+                <li><strong>Mesa de Controversias:</strong> Espacio habilitado por el comité organizador para revisar reclamaciones o señalamientos sobre posibles violaciones al reglamento durante los encuentros.</li>
+                <li><strong>Operador:</strong> Miembro del equipo responsable de manejar el robot durante los partidos. Puede haber hasta dos operadores por equipo en cada encuentro.</li>
+                <li><strong>Asistente:</strong> Miembro del equipo que apoya al operador con tareas relacionadas con la configuración o mantenimiento del robot entre partidos.</li>
+                <li><strong>Interferencia Inalámbrica:</strong> Alteraciones en la comunicación inalámbrica de los robots debido a señales externas, las cuales están prohibidas en la competencia.</li>
+                <li><strong>Amonestación Menor:</strong> Advertencia otorgada a un equipo por infracciones leves al reglamento, como ingresar sin autorización al área de juego.</li>
+                <li><strong>Amonestación Grave:</strong> Infracción seria que puede resultar en la pérdida del partido o descalificación, como el uso de lenguaje ofensivo o dispositivos prohibidos.</li>
+                <li><strong>Equipo de Protección:</strong> Herramientas de seguridad obligatorias para los operadores y asistentes, necesarias para garantizar su bienestar durante los encuentros.</li>
+                <li><strong>Flexibilidad de las Reglas:</strong> Permiso otorgado a los organizadores locales para ajustar ciertas normas antes del evento, siempre y cuando se mantengan consistentes durante toda la competencia.</li>
+            </ul>
+        </div>
+
+        <div id="sec11">
+            <h2 class="section-header">11. Contacto</h2>
+            <p>Para cualquier duda técnica, aclaración sobre el reglamento o consultas de logística, los participantes pueden comunicarse con el comité organizador a través de los medios oficiales listados a continuación. Se recomienda dirigir las preguntas específicas de la competencia al responsable de la categoría para obtener una respuesta más ágil.</p>
+
+            <div class="img-container">
+                <img src="img/img_7.jpg" alt="Enlace de registro, página del torneo y tabla de contacto">
+                <span class="caption">Enlace de registro, página del torneo y contactos oficiales</span>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>Enlace de registro</h4>
+                    <p><a style="color: var(--brand-cyan);" href="https://forms.office.com/r/Y033JAEwVZ" target="_blank">https://forms.office.com/r/Y033JAEwVZ</a></p>
+                </div>
+                <div class="contact-card">
+                    <h4>Página del Torneo</h4>
+                    <p><a style="color: var(--brand-cyan);" href="https://osbaldo-aragon.github.io/torneo_robotica/" target="_blank">https://osbaldo-aragon.github.io/torneo_robotica/</a></p>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>Responsable de categoría FutBol Sumo Semi-Pro</h4>
+                    <p><strong>Ing. Julio Cesar Ibarra Esquivel</strong></p>
+                    <p><a style="color: var(--brand-cyan);" href="mailto:julio.ie@regionllanos.tecnm.mx">julio.ie@regionllanos.tecnm.mx</a></p>
+                    <p>(618) 297-88-63</p>
+                </div>
+                <div class="contact-card">
+                    <h4>Coordinador General</h4>
+                    <p><strong>M.C. Osbaldo Aragón Banderas</strong></p>
+                    <p><a style="color: var(--brand-cyan);" href="mailto:osbaldo.ab@regionllanos.tecnm.mx">osbaldo.ab@regionllanos.tecnm.mx</a></p>
+                    <p>(618) 178-37-93</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://forms.office.com/r/Y033JAEwVZ" target="_blank" class="btn-download" style="background: var(--brand-cyan);">
+                    REGISTRO AL TORNEO
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-org">Academia de Ingeniería Mecatrónica ITSRLL</div>
+        <p style="color: #666;">Torneo de Robótica Llanos &copy; 2026</p>
+        <p style="color: #444; font-size: 0.9rem; margin-top: 10px;">Versión web del reglamento FutBol Sumo Semi-Pro</p>
+
+        <div style="margin-top: 20px;">
+            <a href="https://www.facebook.com/MecaITSRLL" target="_blank" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="https://www.instagram.com/mecatronica_tmo" target="_blank" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://www.tiktok.com/@mecallanos" target="_blank" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fa-brands fa-tiktok fa-lg"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
