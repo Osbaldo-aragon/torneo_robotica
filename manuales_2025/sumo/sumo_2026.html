@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglamento Seguidor de Línea 2026 | ITSRLL</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&family=Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- PALETA DE COLORES (Cyber-Western) --- */
+        :root {
+            --brand-orange: #ff7b00; 
+            --brand-cyan: #00f0ff;   
+            --brand-gold: #d4af37;   
+            --bg-dark: #0f0a06;      
+            --bg-card: #1c1510;      
+            --text-light: #fbebd6;   
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .western-font {
+            font-family: 'Rye', serif;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- HEADER SIMPLIFICADO --- */
+        header {
+            background: rgba(15, 10, 6, 0.98);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--brand-orange);
+            box-shadow: 0 0 15px rgba(255, 123, 0, 0.3);
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--brand-orange);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-link {
+            color: var(--brand-cyan);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover { text-shadow: 0 0 8px var(--brand-cyan); }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 40px;
+            padding: 20px;
+        }
+
+        /* --- BARRA DE DESCARGA & NOTICIAS --- */
+        .status-bar {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--brand-cyan);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-bar::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 5px; height: 100%;
+            background: var(--brand-cyan);
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: var(--brand-orange);
+            color: #000;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-radius: 4px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
+        }
+
+        .btn-download:hover {
+            background: var(--brand-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* --- TÍTULOS DE SECCIÓN --- */
+        .doc-title {
+            font-size: 2.5rem;
+            color: var(--brand-gold);
+            text-shadow: 2px 2px 0 #000;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .section-header {
+            color: var(--brand-orange);
+            border-bottom: 1px solid var(--brand-cyan);
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        h3 { color: var(--brand-cyan); margin-top: 30px; font-size: 1.3rem; }
+
+        /* --- TEXTO Y LISTAS --- */
+        p { margin-bottom: 15px; text-align: justify; }
+        
+        ul, ol { margin-left: 20px; margin-bottom: 20px; }
+        
+        li { margin-bottom: 8px; }
+        
+        li::marker { color: var(--brand-orange); }
+
+        .highlight {
+            color: var(--brand-gold);
+            font-weight: bold;
+        }
+
+        /* --- TABLAS CYBER --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(28, 21, 16, 0.8);
+            border: 1px solid #333;
+        }
+
+        th {
+            background: rgba(255, 123, 0, 0.2);
+            color: var(--brand-orange);
+            padding: 15px;
+            border: 1px solid var(--brand-orange);
+            text-align: left;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        td {
+            padding: 12px;
+            border: 1px solid #444;
+        }
+
+        tr:hover td {
+            background: rgba(0, 240, 255, 0.05);
+        }
+
+        /* --- IMÁGENES --- */
+        .img-container {
+            text-align: center;
+            margin: 40px 0;
+            background: var(--bg-card);
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #33251a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #444;
+        }
+
+        .caption {
+            display: block;
+            margin-top: 10px;
+            color: #888;
+            font-size: 0.9rem;
+            font-style: italic;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #000;
+            padding: 3rem 10%;
+            text-align: center;
+            border-top: 1px solid #333;
+            margin-top: 4rem;
+        }
+        
+        .footer-org {
+            color: var(--brand-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .doc-title { font-size: 1.8rem; }
+            .section-header { font-size: 1.5rem; }
+            .container { padding: 10px; margin-top: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">
+            <i class="fas fa-file-alt"></i> REGLAMENTO SUMO
+        </div>
+        <a href="https://osbaldo-aragon.github.io/torneo_robotica/index.html" class="nav-link"><i class="fas fa-arrow-left"></i> VOLVER</a>
+    </header>
+
+    <div class="container">
+        
+        
+
+        <h1 class="doc-title western-font">MINI SUMO</h1>
+        <p style="text-align: center; color: var(--brand-cyan); letter-spacing: 2px;">CATEGORÍA SEMI-PRO | 2026</p>
+
+        <div class="status-bar">
+            <h3 style="margin-top: 0; color: var(--brand-gold);"><i class="fas fa-bullhorn"></i> DOCUMENTO OFICIAL</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 5px;"><strong>Fuente:</strong> REGLAS_SUMO_2026.pdf</p>
+            <ul style="font-size: 0.9rem;">
+                <li>Conversión a HTML siguiendo el formato base de <em>seguidor_2025</em>.</li>
+                <li>Se conservaron títulos, numeración y contenido del PDF.</li>
+                <li>Las imágenes se referencian como <code>img_1.jpg</code> a <code>img_18.jpg</code> (carpeta <code>img/</code>).</li>
+            </ul>
+            <a href="REGLAS_SUMO_2026.pdf" class="btn-download" download>
+                <i class="fas fa-file-pdf"></i> DESCARGAR PDF
+            </a>
+        </div>
+
+        <div id="portada">
+            <h2 class="section-header">Portada</h2>
+            <div class="img-container">
+                <img src="img/img_1.jpg" alt="Portada Mini Sumo Semi-Pro">
+                <span class="caption">Portada del reglamento Mini Sumo (Semi-Pro) 2026.</span>
+            </div>
+            <p style="text-align:center;">REGLAMENTO | MINI SUMO (SEMI-PRO) | 2026</p>
+        </div>
+
+        <div id="indice">
+            <h2 class="section-header">Índice</h2>
+            <ul>
+                <li>1. Definición de Lucha de Sumo</li>
+                <li>2. Requisitos para los Robots
+                    <ul>
+                        <li>2.1. Especificaciones Generales del Robot</li>
+                        <li>2.2. Limitaciones / Restricciones del robot</li>
+                    </ul>
+                </li>
+                <li>3. Requisitos del Dohyō (anillo de sumo)
+                    <ul>
+                        <li>3.1. Interior del Dohyō</li>
+                        <li>3.2. Especificaciones del Dohyō</li>
+                        <li>3.3. Exterior del Dohyō</li>
+                        <li>3.4. Cómo se realizan los combates</li>
+                        <li>3.5. Tabla 1. Motores y llantas admitidas y no admitidas para la competencia</li>
+                    </ul>
+                </li>
+                <li>4. Desarrollo del combate
+                    <ul>
+                        <li>4.1. División del área de combate</li>
+                        <li>4.2. Inicio</li>
+                        <li>4.3. Alto, Reanudar</li>
+                    </ul>
+                </li>
+                <li>5. Tiempo de combate</li>
+                <li>6. Puntuación / Yuhkoh (punto)</li>
+                <li>7. Prohibiciones
+                    <ul>
+                        <li>7.1. Conducta de jugadores</li>
+                        <li>7.2. Acciones prohibidas (pérdida inmediata)</li>
+                        <li>7.3. Situaciones de combate “sin pelea”</li>
+                        <li>7.4. Infracciones menores</li>
+                        <li>7.5. Infracciones mayores</li>
+                    </ul>
+                </li>
+                <li>8. Penalizaciones</li>
+                <li>9. Presentación de objeciones</li>
+                <li>10. Flexibilidad del reglamento</li>
+                <li>11. Responsabilidad</li>
+                <li>12. APÉNDICE 1 — Inicio y paro por control remoto (IR)</li>
+                <li>13. Contacto</li>
+            </ul>
+        </div>
+
+
+<h2 class="section-header">1. Definición de Lucha de Sumo</h2>
+
+<p>El minisumo autónomo es una disciplina de robótica inspirada en el tradicional deporte de<br>sumo japonés, donde pequeños robots completamente autónomos se enfrentan sobre un<br>área circular, conocida como Dohyo, con el objetivo de expulsar a su oponente fuera del<br>ring.</p>
+
+<p>En esta competencia, la lucha no es simplemente un enfrentamiento de fuerza bruta, sino<br>un desafío de innovación, creatividad e ingeniería. Los robots deben detectar a sus<br>contrincantes, mantener el equilibrio, anticipar movimientos y reaccionar rápidamente a<br>una variedad de situaciones imprevistas. Así, se fomenta el trabajo en equipo, la resolución<br>de problemas y el aprendizaje continuo.</p>
+
+<p>La dinámica del torneo se basa en enfrentamientos directos entre equipos, cada uno<br>compuesto por un máximo de tres integrantes, de los cuales dos pueden ingresar al área<br>de juego: un operador principal y un asistente. Mientras tanto, el resto del equipo, así<br>como el público, observan desde la audiencia.</p>
+
+<p>A continuación, se presentan las reglas y lineamientos oficiales que regirán la categoría de<br>minisumo autónomo. Estas normas han sido diseñadas para garantizar la equidad, la<br>seguridad y la claridad de la competencia, promoviendo una experiencia enriquecedora<br>tanto para participantes como para espectadores.</p>
+
+<h2 class="section-header">2. Requisitos para los Robots</h2>
+
+<h3>2.1. Especificaciones Generales del Robot</h3>
+
+<ul>
+<li><strong>A.</strong> Se permite cualquier diseño de robot, siempre que no viole las limitaciones de la</li>
+</ul>
+
+<p>sección 2.2.</p>
+<ul>
+<li><strong>B.</strong> El robot debe caber dentro de un cuadrado con lado de 13 cm (130 mm).</li>
+<li><strong>C.</strong> La altura máxima del robot no está restringida; sin embargo, no debe exceder el</li>
+</ul>
+
+<p>diámetro total del dohyō (77cm).</p>
+<ul>
+<li><strong>D.</strong> La masa total del robot al inicio de un combate debe ser menor a 600 g.</li>
+<li><strong>E.</strong> El robot puede expandirse después de iniciar el combate, pero no debe separarse</li>
+</ul>
+
+<p>físicamente en piezas; debe permanecer como un solo robot centralizado. Robots<br>que violen esto perderán el combate. Tornillos, tuercas, rondanas u otras partes con<br>masa total menor a 10 g que se desprendan no causarán la pérdida automática.</p>
+
+<ul>
+<li><strong>F.</strong> Todos los robots deben ser autónomos. Se permite cualquier mecanismo de control</li>
+</ul>
+
+<p>mientras todos los componentes estén contenidos dentro del robot y no interactúe con un sistema de control externo (humano, máquina u otro).</p>
+<ul>
+<li><strong>G.</strong> Los robots deben mostrar un número, proporcionado por los organizadores,</li>
+</ul>
+
+<p>en un lugar visible del robot para el árbitro. Este número se usa para identificar el robot.</p>
+<ul>
+<li><strong>H.</strong> La pala/hoja del robot debe estar cubierta con una protección, excepto</li>
+</ul>
+
+<p>cuando el robot esté colocado en el dohyō y listo para pelear. No cumplir implica una advertencia; con dos advertencias, se otorgará un punto al equipo contrario.</p>
+<ul>
+<li><strong>I.</strong> La tracción debe realizarse únicamente con 2 motores TT amarillos y llantas</li>
+</ul>
+
+<p>estándar con rin amarillo de plástico. No se permiten otros motores/ruedas en<br>esta categoría. (ver tabla 1.)</p>
+
+<h3>2.2. Limitaciones / Restricciones del robot</h3>
+
+<ul>
+<li><strong>A.</strong> Por seguridad, el robot debe estar equipado con un sensor IR de inicio/paro</li>
+</ul>
+
+<p>operado por el árbitro.</p>
+<ul>
+<li><strong>B.</strong> El constructor del robot es responsable de integrar dicho sensor. Las especificaciones</li>
+</ul>
+
+<p>técnicas del receptor IR se indican en el Apéndice 1.</p>
+<ul>
+<li><strong>C.</strong> Los participantes pueden implementar su propio hardware o usar un módulo</li>
+</ul>
+
+<p>prearmado compatible con el propuesto.</p>
+<ul>
+<li><strong>D.</strong> Es obligatorio que el módulo IR funcione correctamente: el robot debe iniciar y</li>
+</ul>
+
+<p>detenerse cuando el árbitro emita la señal con el control oficial. La responsabilidad es totalmente del equipo. Si el módulo no está instalado o no funciona, el equipo no podrá competir.</p>
+<ul>
+<li><strong>E.</strong> En la homologación y en los combates, el módulo debe funcionar correctamente.</li>
+<li><strong>F.</strong> Si durante una ronda ocurre una falla del módulo y el robot no se detiene cuando</li>
+</ul>
+
+<p>el árbitro envía la señal, se perderá esa ronda. Se recomienda y permite reemplazarlo bajo supervisión del árbitro (después de terminar la ronda). Tras reemplazar el sensor, el combate continuará si aún faltan rondas.</p>
+<ul>
+<li><strong>G.</strong> No se permiten dispositivos de interferencia (“jammers”), como LEDs IR destinados</li>
+</ul>
+
+<p>a saturar los sensores IR del oponente.</p>
+<ul>
+<li><strong>H.</strong> No se permiten partes que puedan romper o dañar el dohyō. No uses partes</li>
+</ul>
+
+<p>destinadas a dañar al robot o al operador rival. Empujones y golpes normales no se<br>consideran intención de daño.</p>
+
+<ul>
+<li><strong>I.</strong> No se permiten dispositivos que almacenen líquidos, polvos, gases u otras sustancias</li>
+</ul>
+
+<p>para arrojarlas al oponente.</p>
+<ul>
+<li><strong>J.</strong> No se permiten dispositivos con llama.</li>
+<li><strong>K.</strong> No se permiten dispositivos que lancen objetos al oponente.</li>
+<li><strong>L.</strong> No se permiten sustancias pegajosas para mejorar tracción.</li>
+<li><strong>M.</strong> No se permiten dispositivos para incrementar fuerza de succión/carga hacia abajo</li>
+</ul>
+
+<p>(p.ej. EDF, bombas de vacío, etc.).</p>
+<ul>
+<li><strong>N.</strong> Se permite un máximo de dos banderas. Deben estar en posición vertical y</li>
+</ul>
+
+<p>permanecer dentro del perímetro del robot. Tras colocar el robot en el dohyō, solo puede tocarse para poner las banderas verticales. Una vez iniciado el combate, las banderas pueden caer.</p>
+<ul>
+<li><strong>O.</strong> Se permite (no obligatorio) usar de una a dos banderas de cualquier color. Deben</li>
+</ul>
+
+<p>ser de tela, papel o poliéster, y la asta de plástico, madera, aluminio o fibra de carbono.</p>
+<ul>
+<li><strong>P.</strong> La pala/hoja o extensión del robot no puede ser blanca. La bandera es excepción.</li>
+</ul>
+
+<h2 class="section-header">3. Requisitos del Dohyō (anillo de sumo)</h2>
+
+<h3>3.1. Interior del Dohyō</h3>
+
+<ul>
+<li><strong>A.</strong> El interior del dohyō es la superficie de juego rodeada por e incluyendo la línea de</li>
+</ul>
+
+<p>borde.</p>
+<ul>
+<li><strong>B.</strong> Todo lo que esté fuera se considera exterior del dohyō.</li>
+</ul>
+
+<h3>3.2. Especificaciones del Dohyō</h3>
+
+<ul>
+<li><strong>A.</strong> El dohyō será circular, de madera de 2–3 cm de grosor, pintado de negro, con</li>
+</ul>
+
+<p>diámetro de 77 cm (770 mm). (figura 1)</p>
+<ul>
+<li><strong>B.</strong> La línea de borde es un anillo circular blanco de 2.5 cm (25 mm) de ancho.</li>
+<li><strong>C.</strong> El dohyō se colocará sobre una superficie de madera a 70–100 cm (700–1000 mm)</li>
+</ul>
+
+<p>de altura.</p>
+<ul>
+<li><strong>D.</strong> Para todas las dimensiones aplica tolerancia de 5%.</li>
+<li><strong>E.</strong> Líneas de salida (Shikiri-Sen): 10 × 1 cm (100 × 10 mm)</li>
+</ul>
+
+
+        <div class="img-container">
+            <img src="img/img_2.jpg" alt="Figura 1. Dimensiones y posición del Dohyō">
+            <span class="caption">Figura 1. Dimensiones y posición del Doyho</span>
+        </div>
+
+
+<h3>3.3. Exterior del Dohyō</h3>
+
+<ul>
+<li><strong>A.</strong> Debe existir un espacio adecuado fuera del borde externo del dohyō. Puede ser de</li>
+</ul>
+
+<p>cualquier color, material o forma, siempre que no viole el concepto de estas reglas.</p>
+<ul>
+<li><strong>B.</strong> Esta zona, con el dohyō al centro, se llama “área del dohyō”.</li>
+</ul>
+
+<h3>3.4. Cómo se realizan los combates</h3>
+
+<ul>
+<li><strong>A.</strong> Un combate consta de 3 rondas de 01:00 minuto, con tiempo total de 03:00 minutos,</li>
+</ul>
+
+<p>salvo extensión por árbitros.</p>
+<ul>
+<li><strong>B.</strong> Gana el combate el equipo que gane dos rondas o consiga primero dos puntos</li>
+</ul>
+
+<p>Yuhkoh dentro del límite. Si se cumple el tiempo y un equipo tiene 1 punto Yuhkoh, ese equipo gana.</p>
+<ul>
+<li><strong>C.</strong> Si nadie gana dentro del tiempo, puede haber combate extendido: el primer punto</li>
+</ul>
+
+<p>Yuhkoh gana. Alternativamente, el ganador puede decidirse por árbitros, sorteo o repetición.</p>
+<ul>
+<li><strong>D.</strong> Si los robots se atascan, aplica 6.1.</li>
+<li><strong>E.</strong> Si uno de los robots no arranca, se reinicia. Si vuelve a no arrancar, gana el robot</li>
+</ul>
+
+<p>que se mueva.</p>
+
+
+        <div class="img-container">
+            <span class="caption" style="display:block; margin-bottom:12px;">Tabla 1. Motores y llantas admitidas y no admitidas para la competencia</span>
+            <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; background:#111;">
+                <thead>
+                    <tr>
+                        <th>DISPOSITIVO</th>
+                        <th>ESPECIFICACIONES Y OBSERVACIONES</th>
+                        <th>EJEMPLOS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="min-width:150px;"><strong>SISTEMA DE MOVIMIENTO</strong><br>Motores</td>
+                        <td>
+                            <ul>
+                                <li>El sistema de movimiento está limitado al uso de únicamente 2 motorreductores TT por robot.</li>
+                                <li>El jurado evaluará que los motores no estén alterados.</li>
+                                <li>Cada motor debe contar con carcaza y engranaje de plástico comerciales.</li>
+                                <li>Se admite la configuración lineal y en “L”.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                                <div style="border:1px solid #333; padding:8px; border-radius:8px;">
+                                    <div style="font-weight:bold; margin-bottom:6px; color:var(--brand-cyan);">Admitidos</div>
+                                    <img src="img/img_4.jpg" alt="Motor TT configuración lineal" style="width:100%; margin-bottom:6px;">
+                                    <img src="img/img_3.jpg" alt="Motor TT configuración en L" style="width:100%;">
+                                    <div style="text-align:right; margin-top:6px;"><img src="img/img_14.jpg" alt="Permitido" style="width:28px; border:none;"></div>
+                                </div>
+                                <div style="border:1px solid #333; padding:8px; border-radius:8px;">
+                                    <div style="font-weight:bold; margin-bottom:6px; color:#ffb3b3;">No admitidos</div>
+                                    <img src="img/img_5.jpg" alt="Motor no permitido 1" style="width:100%; margin-bottom:6px;">
+                                    <img src="img/img_6.jpg" alt="Motor no permitido 2" style="width:100%; margin-bottom:6px;">
+                                    <img src="img/img_7.jpg" alt="Motor no permitido 3" style="width:100%;">
+                                    <div style="text-align:right; margin-top:6px;"><img src="img/img_13.jpg" alt="No permitido" style="width:28px; border:none;"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ruedas o tracks</strong></td>
+                        <td>
+                            <ul>
+                                <li>Se deberán usar únicamente ruedas de plástico con rin amarillo comerciales.</li>
+                                <li>La llanta no puede ser de goma.</li>
+                                <li>No se permitirán alteraciones en las llantas (ligas, silicón, pegamento, etc.).</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                                <div style="border:1px solid #333; padding:8px; border-radius:8px;">
+                                    <div style="font-weight:bold; margin-bottom:6px; color:var(--brand-cyan);">Admitidas</div>
+                                    <img src="img/img_8.jpg" alt="Rueda permitida 1" style="width:100%; margin-bottom:6px;">
+                                    <img src="img/img_9.jpg" alt="Rueda permitida 2" style="width:100%; margin-bottom:6px;">
+                                    <img src="img/img_10.jpg" alt="Rueda permitida 3" style="width:100%;">
+                                    <div style="text-align:right; margin-top:6px;"><img src="img/img_14.jpg" alt="Permitido" style="width:28px; border:none;"></div>
+                                </div>
+                                <div style="border:1px solid #333; padding:8px; border-radius:8px;">
+                                    <div style="font-weight:bold; margin-bottom:6px; color:#ffb3b3;">No admitidas</div>
+                                    <img src="img/img_11.jpg" alt="Rueda no permitida 1" style="width:100%; margin-bottom:6px;">
+                                    <img src="img/img_12.jpg" alt="Rueda no permitida 2" style="width:100%;">
+                                    <div style="text-align:right; margin-top:6px;"><img src="img/img_13.jpg" alt="No permitido" style="width:28px; border:none;"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+<h3>3.5. Desarrollo de la competencia</h3>
+
+<h3>3.5.1. Sistema de competencia</h3>
+
+<p>Se usará sistema grupos – cuartos – semifinales – finales para maximizar rondas jugadas<br>por robot.</p>
+
+<p>Grupos</p>
+
+<ul>
+<li><strong>A.</strong> Se dividirán robots en grupos según número de participantes.</li>
+<li><strong>B.</strong> El orden en grupos será aleatorio tras la inauguración oficial y el check-in.</li>
+<li><strong>C.</strong> Los grupos estarán disponibles en el sitio web para cada categoría.</li>
+<li><strong>D.</strong> Si no hay suficientes participantes para grupos, se jugará desde el inicio con sistema</li>
+</ul>
+
+<p>piramidal (llaves), con posiciones aleatorias.</p>
+<ul>
+<li><strong>E.</strong> Todos contra todos dentro del grupo.</li>
+<li><strong>F.</strong> Puntos: victoria 1, derrota 0.</li>
+<li><strong>G.</strong> Cada combate es al mejor de 3 rondas y será supervisado por 1 o 2 árbitros</li>
+</ul>
+
+<p>(principal y asistente).</p>
+<ul>
+<li><strong>H.</strong> Las decisiones deben ser unánimes y son finales. Cuestionarlas implica</li>
+</ul>
+
+<p>descalificación.</p>
+<ul>
+<li><strong>I.</strong> El ranking se define por puntos acumulados.</li>
+<li><strong>J.</strong> Empates: criterios de desempate como diferencia de puntos/puntajes, resultado</li>
+</ul>
+
+<p>directo, u otros (voluntad de pelea, construcción/programación, conducta).</p>
+<ul>
+<li><strong>K.</strong> Si dos robots del mismo equipo se enfrentan, deben jugar; no se permite “pasar” sin</li>
+</ul>
+
+<p>jugar ni arreglar rivales.</p>
+<ul>
+<li><strong>L.</strong> Los que avanzan jugarán cuartos. Avanzan los mejores 2 (o más) por grupo.</li>
+<li><strong>M.</strong> Tras grupos, no se aceptan objeciones ni cambios.</li>
+</ul>
+
+<p>Cuartos</p>
+
+<ul>
+<li><strong>A.</strong> Los clasificados se emparejan según el esquema indicado (ejemplo: 1° grupo A vs 2°</li>
+</ul>
+
+<p>grupo D, etc.).</p>
+<ul>
+<li><strong>B.</strong> Las llaves se publican en web tras concluir grupos.</li>
+<li><strong>C.</strong> Eliminación directa: el que pierde sale.</li>
+<li><strong>D.</strong> Mejor de 3 rondas, 3 árbitros, decisión unánime y final.</li>
+<li><strong>E.</strong> Si dos robots del mismo equipo se enfrentan, deben jugar.</li>
+<li><strong>F.</strong> Ganadores avanzan a semifinales.</li>
+</ul>
+
+<p>Semifinales y finales</p>
+
+<ul>
+<li><strong>A.</strong> Llaves publicadas en web.</li>
+<li><strong>B.</strong> Emparejamientos con los últimos 4 ganadores.</li>
+<li><strong>C.</strong> Ganadores de semifinales disputan el título; perdedores juegan por 3° lugar.</li>
+<li><strong>D.</strong> Eliminación directa.</li>
+<li><strong>E.</strong> Puntos: victoria 1, derrota 0 (para el sistema).</li>
+<li><strong>F.</strong> Mejor de 3 rondas, 3 árbitros, decisión unánime y final.</li>
+<li><strong>G.</strong> Si robots del mismo equipo se enfrentan, deben jugar.</li>
+<li><strong>H.</strong> El ganador de la final es campeón.</li>
+</ul>
+
+<h3>3.5.2. Equipos y robots</h3>
+
+<ul>
+<li><strong>A.</strong> Hasta la homologación, los equipos permanecen en el área reservada.</li>
+<li><strong>B.</strong> Cada equipo debe seguir el horario publicado. No lleguen tarde. Si se llama a jugar</li>
+</ul>
+
+<p>y no llegan en 5 minutos, el robot pierde el combate.</p>
+<ul>
+<li><strong>C.</strong> Cada equipo tendrá un operador y opcionalmente un asistente. Solo ellos pueden</li>
+</ul>
+
+<p>estar en el área de espera y juego.</p>
+<ul>
+<li><strong>D.</strong> El resto del equipo observa desde el público.</li>
+<li><strong>E.</strong> Una persona puede ser operador de máximo 2 robots. El operador no puede</li>
+</ul>
+
+<p>cambiarse y debe ser el registrado.</p>
+<ul>
+<li><strong>F.</strong> En homologación se tomará foto del robot con número visible, y también con gafete</li>
+</ul>
+
+<p>y rostro del operador.</p>
+
+<h3>3.5.3. Combates</h3>
+
+<ul>
+<li><strong>A.</strong> Durante un combate se tendrá una pausa corta máxima de 01:00 minuto definida</li>
+</ul>
+
+<p>por el juez entre rondas, exclusivamente para limpiar las ruedas o el robot, configurar tácticas y reanudar.</p>
+<ul>
+<li><strong>B.</strong> Entre combates sí se permiten cambios, reparaciones y reprogramación.</li>
+<li><strong>C.</strong> La configuración debe hacerse antes de colocar el robot en el dohyō.</li>
+<li><strong>D.</strong> Una vez colocado, no puede tocarse; excepción: colocar banderas verticales cuando</li>
+</ul>
+
+<p>el árbitro lo indique.</p>
+<ul>
+<li><strong>E.</strong> El operador tiene 5 segundos desde la señal del árbitro para activar el robot (si es</li>
+</ul>
+
+<p>necesario) con un control remoto desde distancia segura; luego debe soltar el control.</p>
+<ul>
+<li><strong>F.</strong> Durante cada ronda, tras colocar los robots, operador y asistente no deben usar ni</li>
+</ul>
+
+<p>sostener controles u otros dispositivos para controlar robots. El teléfono solo puede<br>usarse para grabar.</p>
+
+<ul>
+<li><strong>G.</strong> No pueden retirar/tocar robots tras terminar la pelea hasta que el árbitro lo indique.</li>
+</ul>
+
+<p>Si lo hacen antes, no podrán presentar objeciones.</p>
+
+<h3>3.6. Homologación</h3>
+
+<ul>
+<li><strong>A.</strong> Cada equipo debe pasar homologación para participar.</li>
+<li><strong>B.</strong> La homologación se realiza al inicio.</li>
+</ul>
+
+<h3>3.6.1. Al inicio del grupo</h3>
+
+<ul>
+<li><strong>A.</strong> Se verificará el número del robot, visible para árbitros, y debe permanecer adherido</li>
+</ul>
+
+<p>toda la competencia (no es obligatorio que se vea durante el combate en el dohyō).</p>
+<ul>
+<li><strong>B.</strong> Se tomará foto a cada robot con el número visible; también con gafete y rostro del</li>
+</ul>
+
+<p>operador.</p>
+<ul>
+<li><strong>C.</strong> Se verifica dimensión colocando un marco/caja sin fondo de 13.2 × 13.2 cm (132 ×</li>
+</ul>
+
+<p>132 mm) sobre el robot.</p>
+<ul>
+<li><strong>D.</strong> Se pesa en báscula digital: máximo 600 g con una tolerancia de 2g.</li>
+<li><strong>E.</strong> Se verifica funcionamiento del sensor IR para inicio y paro.</li>
+<li><strong>F.</strong> Tras homologación, el primer grupo permanece en el área de espera; los demás</li>
+</ul>
+
+<p>regresan al salón.</p>
+<ul>
+<li><strong>G.</strong> Se verifica que la pala esté cubierta con protección.</li>
+</ul>
+
+<h3>3.6.2. Antes de cada combate</h3>
+
+<ul>
+<li><strong>A.</strong> Se verifica que el número exista en el robot.</li>
+<li><strong>B.</strong> Se verifica funcionamiento IR de inicio/paro.</li>
+<li><strong>C.</strong> Se confirma que el operador no cambió.</li>
+<li><strong>D.</strong> Se verifica protección en la pala.</li>
+</ul>
+
+<h2 class="section-header">4. Inicio, Alto, Reanudar y Fin del combate</h2>
+
+<h3>4.1. Colocación del robot</h3>
+
+<ul>
+<li><strong>A.</strong> A instrucción del árbitro, ambos equipos colocan sus robots al mismo tiempo. Tras</li>
+</ul>
+
+<p>colocarlos, no pueden moverse. (Figura 2)</p>
+<ul>
+<li><strong>B.</strong> Cualquier parte del robot debe colocarse detrás de las Shikiri-Sen. El robot no debe</li>
+</ul>
+
+<p>cruzar la línea hacia el rival.</p>
+<ul>
+<li><strong>C.</strong> Debe colocarse dentro de las líneas extendidas verticalmente desde los bordes de las</li>
+</ul>
+
+<p>Shikiri-Sen.</p>
+<ul>
+<li><strong>D.</strong> El árbitro revisa y, si está mal colocado, se recoloca.</li>
+</ul>
+
+
+        <div class="img-container">
+            <img src="img/img_15.jpg" alt="Figura 2. Ejemplo de posicionamiento correcto e incorrecto">
+            <span class="caption">Figura 2. Ejemplo de posicionamiento correcto (verde) e incorrecto (Rojo) de los robots para el combate.</span>
+        </div>
+
+
+<h3>4.2. Inicio</h3>
+
+<ul>
+<li><strong>A.</strong> En Mini Sumo, el árbitro inicia cada ronda enviando señal de inicio por IR. En</li>
+</ul>
+
+<p>cuanto la reciben, la ronda inicia inmediatamente, sin retraso.</p>
+<ul>
+<li><strong>B.</strong> Especificaciones del receptor IR en Apéndice 1.</li>
+<li><strong>C.</strong> El inicio se realizará cuando operador y asistente estén en zona segura.</li>
+<li><strong>D.</strong> Si operador/asistente salen de zona segura sin aprobación, pueden perder un punto</li>
+</ul>
+
+<p>o ser descalificados.</p>
+
+<h3>4.3. Alto, Reanudar</h3>
+
+<ul>
+<li><strong>A.</strong> El combate se detiene y reanuda cuando el árbitro lo anuncia.</li>
+<li><strong>B.</strong> El árbitro indica cuándo colocar robots, cuándo retirarse a zona segura y cuándo</li>
+</ul>
+
+<p>retirarlos del dohyō.</p>
+
+<h3>4.4. Fin</h3>
+
+<ul>
+<li><strong>A.</strong> El combate termina cuando el árbitro lo anuncia. Se retiran robots después del</li>
+</ul>
+
+<p>anuncio.</p>
+<ul>
+<li><strong>B.</strong> Tras retirar robots, la decisión es final y no se aceptan objeciones.</li>
+</ul>
+
+<h2 class="section-header">5. Tiempo del combate</h2>
+
+<h3>5.1. Duración</h3>
+
+<ul>
+<li><strong>A.</strong> Los combates constan de 3 rondas de 01:00 minuto.</li>
+<li><strong>B.</strong> Un combate dura 3 minutos, iniciando y terminando a la orden del árbitro, tras</li>
+</ul>
+
+<p>retirarse a zona segura.</p>
+
+<h3>5.2. Extensión</h3>
+
+<ul>
+<li><strong>A.</strong> Si el árbitro lo indica, la extensión dura máximo 03:00 minutos.</li>
+</ul>
+
+<h2 class="section-header">6. Puntuación</h2>
+
+<h3>6.1. Se otorgará un punto “Yuhkoh” cuando:</h3>
+
+<ul>
+<li><strong>A.</strong> Un equipo fuerza legalmente a que el robot rival toque el exterior del dohyō.</li>
+<li><strong>B.</strong> El robot rival toca el exterior por sí mismo.</li>
+<li><strong>C.</strong> Tras contacto, el Robot A provoca que el Robot B sea expulsado completamente;</li>
+</ul>
+
+<p>el punto es para A aunque A toque primero el exterior.</p>
+<ul>
+<li><strong>D.</strong> El robot rival se daña y no puede continuar, y el representante lo anuncia.</li>
+<li><strong>E.</strong> Ambos robots salen simultáneamente: el que es empujado se considera perdedor,</li>
+</ul>
+
+<p>aunque el empujador toque primero el exterior.</p>
+<ul>
+<li><strong>F.</strong> Si una bandera o pieza &gt;10 g se desprende y queda dentro del dohyō, no hay</li>
+</ul>
+
+<p>penalización. Pero si esa(s) bandera(s)/pieza(s) salen del dohyō, el robot propietario<br>pierde la ronda.</p>
+
+<h3>6.2. Si se requiere decisión arbitral para definir ganador, se considera:</h3>
+
+<p>a) Méritos técnicos de movimiento/operación<br>b) Penalizaciones durante el combate<br>c) Actitud de los jugadores</p>
+
+<h3>6.3. El combate se detendrá y se reiniciará bajo estas condiciones:</h3>
+
+<ul>
+<li><strong>A.</strong> Si un robot no arranca: un reinicio. Si vuelve a no arrancar, gana el que se mueva.</li>
+</ul>
+
+<ul>
+<li><strong>B.</strong> Si se enredan o giran sin progreso por 10 s: reinicio. Si se repite, gana el que se</li>
+</ul>
+
+<p>mueva más y muestre voluntad de pelear.</p>
+<ul>
+<li><strong>C.</strong> Si un robot rápido queda atorado en uno lento &gt;5 s: reinicio. Si no hay progreso,</li>
+</ul>
+
+<p>el árbitro detiene sin objeciones. Si se repite, gana el que ataque y se mueva más rápido.</p>
+<ul>
+<li><strong>D.</strong> Si dos robots rápidos se atoran &gt;5 s: reinicio. Si se repite, gana el que ataque más</li>
+</ul>
+
+<p>y se mueva más rápido.</p>
+<ul>
+<li><strong>E.</strong> Si ambos salen con ruedas en el dohyō “al mismo tiempo” y no es claro quién tocó</li>
+</ul>
+
+<p>primero el exterior: repetición; las grabaciones pueden ignorarse.</p>
+<ul>
+<li><strong>F.</strong> Si un robot tiene 1 punto y en la siguiente ronda no hay ganador, solo se permiten</li>
+</ul>
+
+<p>2 repeticiones. Si nadie gana, el robot con 1 punto gana el combate.</p>
+<ul>
+<li><strong>G.</strong> Ambos se mueven sin progreso o se detienen exactamente a la vez y permanecen</li>
+</ul>
+
+<p>detenidos 5 s sin tocarse. Si uno se detiene primero, tras 5 s se declara sin voluntad de pelear y el rival gana el punto, aunque el rival también se detenga. Si ambos se mueven y no es claro el progreso, el árbitro puede extender hasta 30 s.</p>
+<ul>
+<li><strong>H.</strong> Si ambos robots con banderas tienen ruedas en el dohyō y sus banderas tocan el</li>
+</ul>
+
+<p>exterior al mismo tiempo y no es claro cuál fue primero: repetición; grabaciones pueden ignorarse.</p>
+<ul>
+<li><strong>I.</strong> Importante: Si no se puede declarar ganador, regla especial: se coloca una botella</li>
+</ul>
+
+<p>al centro del dohyō y el primer robot que la toque con la carcasa o la pala gana.<br>No cuenta tocar con bandera u otra extensión. Los robots se colocan tocando la<br>línea blanca.</p>
+
+<h3>6.4. Reparaciones, modificaciones e interrupciones imprevistas</h3>
+
+<ul>
+<li><strong>A.</strong> Desde que el robot pasa homologación (y está en espera) hasta que termina el</li>
+</ul>
+
+<p>combate (todas las rondas), no se permiten cambios ni pausas por:</p>
+
+<p>a. No reparaciones durante el combate<br>b. No cambio/carga de batería durante el combate<br>c. No cambio de pala durante el combate<br>d. No reprogramación durante el combate (selección de táctica previa no cuenta</p>
+
+<p>como programación)<br>e. Si la pala se desprende, no puede recolocarse; debe seguir sin pala hasta</p>
+
+<p>terminar</p>
+<ul>
+<li><strong>B.</strong> El robot debe iniciar y terminar el combate sin modificaciones (excepto selección</li>
+</ul>
+
+<p>de táctica) y no puede salir del área por ninguna razón.</p>
+
+<ul>
+<li><strong>C.</strong> Entre rondas hay pausa corta máxima de 01:00 min para limpieza/configuración y</li>
+</ul>
+
+<p>reanudar.</p>
+<ul>
+<li><strong>D.</strong> Cambio de batería, reparaciones o reemplazo de partes defectuosas/palas se permite</li>
+</ul>
+
+<p>después del combate y antes del siguiente.</p>
+<ul>
+<li><strong>E.</strong> Si un robot se rompe durante el combate y no puede continuar, gana el rival. No</li>
+</ul>
+
+<p>se permite reparar.</p>
+
+<h2 class="section-header">7. Infracciones</h2>
+
+<h3>7.1. Infracciones</h3>
+
+<ul>
+<li><strong>A.</strong> Realizar actos descritos en 2.2, 7.2, 7.3 o 7.4 es infracción y amerita advertencia.</li>
+</ul>
+
+<p>Con 2 advertencias, se otorga un punto al rival o puede haber descalificación según<br>gravedad.</p>
+
+<h3>7.2. Conducta indebida</h3>
+
+<ul>
+<li><strong>A.</strong> Insultos al rival/árbitros, poner dispositivos de voz para insultar, escribir insultos</li>
+</ul>
+
+<p>en el robot o acciones ofensivas: infracción.</p>
+<ul>
+<li><strong>B.</strong> Prohibido gritar a árbitros u oponentes.</li>
+<li><strong>C.</strong> Gestos amenazantes no tolerados.</li>
+<li><strong>D.</strong> Agresividad reiterada puede eliminar al equipo y llamar seguridad.</li>
+<li><strong>E.</strong> Gestos/símbolos/palabras ofensivas en la carcasa son violación.</li>
+</ul>
+
+<h3>7.3. Equipo de protección y zona segura</h3>
+
+<p>Falta grave:</p>
+
+<ul>
+<li><strong>A.</strong> Operador/asistente no se retiran a zona segura o no obedecen al árbitro.</li>
+<li><strong>B.</strong> Si el módulo IR no funciona o falta, el robot no puede competir.</li>
+</ul>
+
+<h3>7.4. Infracciones menores</h3>
+
+<h3>7.4.1. Se sanciona con advertencia cuando:</h3>
+
+<ul>
+<li><strong>A.</strong> Un competidor entra al dohyō durante el combate, salvo que el árbitro lo detenga</li>
+</ul>
+
+<p>tras otorgar un punto y el competidor vaya a recoger el robot. “Entrar” significa:<br>a) Parte del cuerpo dentro del dohyō<br>b) Usar objetos mecánicos dentro para apoyar el cuerpo</p>
+
+<ul>
+<li><strong>B.</strong> Acciones:
+<ul>
+<li><strong>a)</strong> Tocar el robot tras colocarlo (excepto poner banderas verticales)</li>
+<li><strong>b)</strong> Exigir detener el combate sin razón válida</li>
+<li><strong>c)</strong> Tardar &gt;60 s en reanudar, salvo extensión del árbitro</li>
+<li><strong>d)</strong> Actos contrarios al fair play</li>
+<li><strong>e)</strong> Salir del área de espera sin informar al oficial/árbitro la razón</li>
+<li><strong>f)</strong> Remover u omitir la colocación de la protección de seguridad en la pala/hoja del</li>
+</ul></li>
+</ul>
+
+<p>robot mientras este se encuentre en el área de espera o fuera del dohyō.</p>
+
+<h3>7.5. Infracciones mayores</h3>
+
+<h3>7.5.1. Se sanciona con 2 puntos Yuhkoh al adversario cuando:</h3>
+
+<ul>
+<li><strong>A.</strong> El robot raya la pintura del dohyō en una distancia mayor a 5 cm de ancho por 2</li>
+</ul>
+
+<p>mm por sí mismo. No cuenta si ocurre durante el forcejeo.</p>
+<ul>
+<li><strong>B.</strong> El robot inicia movimiento después de ser colocado sin señal de inicio del árbitro.</li>
+<li><strong>C.</strong> El robot se incendia: descalificación.</li>
+</ul>
+
+<h2 class="section-header">8. Penalizaciones</h2>
+
+<h3>8.1. Penalizaciones</h3>
+
+<ul>
+<li><strong>A.</strong> Violaciones de 2.2, 7.2, 7.3 y 7.5: el equipo pierde el combate; el árbitro otorga dos</li>
+</ul>
+
+<p>puntos al rival y ordena retirarse.</p>
+<ul>
+<li><strong>B.</strong> Las violaciones de 7.4 se acumulan: dos infracciones menores otorgan un punto al</li>
+</ul>
+
+<p>rival.</p>
+<ul>
+<li><strong>C.</strong> Se acumulan durante un combate.</li>
+</ul>
+
+<h2 class="section-header">9. Presentación de objeciones</h2>
+
+<h3>9.1. Objeciones</h3>
+
+<ul>
+<li><strong>A.</strong> No se aceptan objeciones contra decisiones arbitrales.</li>
+<li><strong>B.</strong> El operador puede presentar dudas al árbitro antes de terminar el combate si hay</li>
+</ul>
+
+<p>dudas sobre aplicación de reglas.</p>
+
+<h2 class="section-header">10. Flexibilidad del reglamento</h2>
+
+<ul>
+<li><strong>A.</strong> Si se respeta el concepto y fundamentos, las reglas son suficientemente flexibles</li>
+</ul>
+
+<p>para cambios en número de jugadores y contenido de combates.</p>
+
+<ul>
+<li><strong>B.</strong> Los organizadores locales pueden modificar o abolir reglas si se publican antes del</li>
+</ul>
+
+<p>evento y se mantienen consistentes durante todo el evento.</p>
+
+<h2 class="section-header">11. Responsabilidad</h2>
+
+<ul>
+<li><strong>A.</strong> Los equipos son responsables de su seguridad y de sus robots, y de cualquier</li>
+</ul>
+
+<p>accidente causado por integrantes o robots.</p>
+<ul>
+<li><strong>B.</strong> La organización RoboChallenge y el equipo organizador no serán responsables por</li>
+</ul>
+
+<p>incidentes/accidentes causados por equipos o su equipo.</p>
+<ul>
+<li><strong>C.</strong> No producen el sensor IR de inicio/paro.</li>
+<li><strong>D.</strong> No implementan ni proporcionan código para el sensor.</li>
+<li><strong>E.</strong> No proporcionan garantía del sensor.</li>
+</ul>
+
+<h2 class="section-header">12. APÉNDICE 1 — Inicio y paro por control remoto (IR)</h2>
+
+<p>Explicación de uso</p>
+
+<p>Puedes encontrar información detallada sobre el uso de los módulos de arranque en:</p>
+
+<p><a style="color:var(--brand-cyan)" href="http://www.startmodule.com" target="_blank">http://www.startmodule.com</a></p>
+
+
+        <div class="img-container">
+            <img src="img/img_16.jpg" alt="Apéndice IR módulo de inicio/paro">
+            <span class="caption">Apéndice 1. Módulo de inicio/paro por control remoto (IR) y referencia de pines.</span>
+        </div>
+
+
+<p>El módulo puede alimentarse con 5 V o 3.3 V y tiene 4 pines, de los cuales 2 son<br>alimentación (VCC y GND).</p>
+
+<p>Los otros 2 pines (Start y Kill switch) indican al robot cuándo iniciar/detenerse y cuándo<br>activar el “kill switch”. En esta competencia el “kill switch” no es obligatorio, pero se explica<br>brevemente. Por seguridad del robot, el equipo decide si lo usa.</p>
+
+<p>Por seguridad se recomienda usar la configuración de 4 pines: además de monitorear Start,<br>puedes monitorear Kill switch.</p>
+
+<p>Importante: si tu código entra en un estado donde no monitorea Start correctamente, o tu<br>robot sufre una caída de voltaje (brown out) durante la pelea, puede dejar de monitorear<br>Start. En ese caso puedes monitorear Kill switch o seguir los diagramas indicados.</p>
+
+<p>El módulo tiene un LED verde que indica si recibió correctamente el comando de<br>inicio/paro o si hay un problema.</p>
+
+<p>Importante: al encender tu robot, asegúrate de que el LED verde esté APAGADO. Eso<br>significa que el robot está listo para aceptar la señal del control.</p>
+
+<p>Si el LED verde está ENCENDIDO, el robot no recibirá otro inicio. En ese caso debes<br>pedir al árbitro que presione “Stop” en el control y luego hacer un ciclo de energía<br>(apagar/encender el robot).</p>
+
+<p>¿Cómo funciona el módulo?</p>
+
+<ul>
+<li><strong>A.</strong> Al encender el robot, el LED verde debe estar apagado: listo para comandos.</li>
+<li><strong>B.</strong> El árbitro realiza la programación inicial del módulo. El LED parpadea varias veces:</li>
+</ul>
+
+<p>el robot “aprende” el control del árbitro (identificador único).</p>
+<ul>
+<li><strong>C.</strong> El módulo queda listo para los comandos de inicio/paro.</li>
+</ul>
+
+<p>Pin Start (inicio)</p>
+
+<ul>
+<li><strong>A.</strong> Al encender, Start está en lógica “0” (estado “encendido/listo”).</li>
+</ul>
+
+<ul>
+<li><strong>B.</strong> Al iniciar la pelea, el árbitro presiona Start y pasa a lógica “1” (estado “iniciado”).</li>
+</ul>
+
+<ul>
+<li><strong>C.</strong> Al terminar, el árbitro presiona Stop y vuelve a “0” (estado “detenido”).</li>
+</ul>
+
+<p>Los módulos pueden encontrarse a la venta en:</p>
+
+<p><a style="color:var(--brand-cyan)" href="https://e-robots.com.mx/producto/modulo-de-inicio/" target="_blank">https://e-robots.com.mx/producto/modulo-de-inicio/</a></p>
+
+<p><a style="color:var(--brand-cyan)" href="https://www.ingenieromaker.com/product-page/remote-robot-trigger" target="_blank">https://www.ingenieromaker.com/product-page/remote-robot-trigger</a></p>
+
+<p><a style="color:var(--brand-cyan)" href="https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module" target="_blank">https://www.jsumo.com/microstart-sumo-minisumo-robot-start-module</a></p>
+
+
+        <div id="contacto">
+            <h2 class="section-header">13. Contacto</h2>
+            <p>Para cualquier duda técnica, aclaración sobre el reglamento o consultas de logística, los participantes pueden comunicarse con el comité organizador a través de los medios oficiales listados a continuación. Se recomienda dirigir las preguntas específicas de la competencia al responsable de la categoría para obtener una respuesta más ágil.</p>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:20px; align-items:start; margin: 25px 0;">
+                <div class="img-container" style="margin:0;">
+                    <h3 style="margin-top:0;">Enlace de registro</h3>
+                    <img src="img/img_17.jpg" alt="QR de registro">
+                    <p style="margin-top:10px;">
+                        <a style="color:var(--brand-cyan)" href="https://forms.office.com/r/Y033JAEwVZ" target="_blank">https://forms.office.com/r/Y033JAEwVZ</a>
+                    </p>
+                </div>
+                <div class="img-container" style="margin:0;">
+                    <h3 style="margin-top:0;">Página del Torneo</h3>
+                    <img src="img/img_18.jpg" alt="QR página del torneo">
+                    <p style="margin-top:10px;">
+                        <a style="color:var(--brand-cyan)" href="https://osbaldo-aragon.github.io/torneo_robotica/" target="_blank">https://osbaldo-aragon.github.io/torneo_robotica/</a>
+                    </p>
+                </div>
+            </div>
+
+            <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; margin-top:20px;">
+                <thead>
+                    <tr>
+                        <th>Responsable de categoría minisumo semi-pro</th>
+                        <th>Coordinador General</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;">
+                            M.C. Jesús Leonel Arce Valdez<br>
+                            <a style="color:var(--brand-cyan)" href="mailto:Jesus.av@regionllanos.tecnm.mx">Jesus.av@regionllanos.tecnm.mx</a><br>
+                            (676) 102-2690
+                        </td>
+                        <td style="text-align:center;">
+                            M.C. Osbaldo Aragón Banderas<br>
+                            <a style="color:var(--brand-cyan)" href="mailto:osbaldo.ab@regionllanos.tecnm.mx">osbaldo.ab@regionllanos.tecnm.mx</a><br>
+                            (618) 178-37-93
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    
+
+    </div>
+
+    <footer>
+        <div class="footer-org">Academia de Ingeniería Mecatrónica ITSRLL</div>
+        <p style="color: #666;">Torneo de Robótica Llanos &copy; 2026</p>
+        <p style="color: #444; font-size: 0.9rem; margin-top: 10px;">Diseñado para la comunidad maker de Durango</p>
+        
+        <div style="margin-top: 20px;">
+            <a href="https://www.facebook.com/MecaITSRLL" target="_blank" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="https://www.instagram.com/mecatronica_tmo" target="_blank" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://www.tiktok.com/@mecallanos" target="_blank" style="margin: 0 10px; color: var(--brand-cyan);"><i class="fa-brands fa-tiktok fa-lg"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
