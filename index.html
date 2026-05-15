@@ -160,6 +160,66 @@
             letter-spacing: 1px;
         }
 
+        /* --- ANUNCIO DE CAMBIO DE SEDE --- */
+        .venue-alert {
+            background: linear-gradient(90deg, #2a0a00 0%, #1c1510 50%, #2a0a00 100%);
+            border-top: 3px solid var(--brand-orange);
+            border-bottom: 3px solid var(--brand-orange);
+            padding: 2rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: inset 0 0 30px rgba(255, 123, 0, 0.15); }
+            50%      { box-shadow: inset 0 0 60px rgba(255, 123, 0, 0.35); }
+        }
+
+        .venue-alert .alert-badge {
+            display: inline-block;
+            background: var(--brand-orange);
+            color: #000;
+            padding: 6px 18px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%      { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        .venue-alert h3 {
+            color: var(--brand-gold);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .venue-alert .alert-venue {
+            font-family: 'Rye', serif;
+            color: var(--brand-cyan);
+            font-size: 2.4rem;
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+            margin: 0.5rem 0;
+            text-transform: none;
+        }
+
+        .venue-alert .alert-location {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .venue-alert .alert-location i { color: var(--brand-orange); margin-right: 8px; }
+
         /* --- SECCIONES GENERALES --- */
         .section-padding { padding: 80px 10%; }
         
@@ -171,6 +231,174 @@
         }
         
         .section-title span { color: var(--text-light); }
+
+        /* --- SECCIÓN DE ESTADÍSTICAS DE REGISTRO --- */
+        .stats-section {
+            background:
+                linear-gradient(135deg, rgba(255, 123, 0, 0.05) 0%, rgba(0, 240, 255, 0.05) 100%),
+                #120c08;
+            border-top: 1px solid #2a1d12;
+            border-bottom: 1px solid #2a1d12;
+        }
+
+        .stats-eyebrow {
+            text-align: center;
+            color: var(--brand-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 5px;
+            margin-bottom: 0.6rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid #33251a;
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--brand-cyan);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--brand-orange);
+            box-shadow: 0 10px 30px rgba(255, 123, 0, 0.2);
+        }
+
+        .stat-card .stat-icon {
+            font-size: 2.2rem;
+            color: var(--brand-gold);
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: var(--brand-orange);
+            line-height: 1;
+            text-shadow: 0 0 15px rgba(255, 123, 0, 0.35);
+        }
+
+        .stat-label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-top: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Tarjetas por categoría (mini) */
+        .category-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .cat-stat {
+            background: var(--bg-card);
+            border-left: 4px solid var(--brand-orange);
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cat-stat:nth-child(2) { border-left-color: var(--brand-cyan); }
+        .cat-stat:nth-child(3) { border-left-color: var(--brand-gold); }
+
+        .cat-stat .cat-stat-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        .cat-stat .cat-stat-name small {
+            display: block;
+            font-family: 'Roboto', sans-serif;
+            color: #999;
+            font-size: 0.75rem;
+            text-transform: none;
+            letter-spacing: 0;
+            margin-top: 2px;
+        }
+        .cat-stat .cat-stat-num {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--brand-orange);
+        }
+        .cat-stat:nth-child(2) .cat-stat-num { color: var(--brand-cyan); }
+        .cat-stat:nth-child(3) .cat-stat-num { color: var(--brand-gold); }
+
+        /* Lista de instituciones */
+        .institutions-block {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid #33251a;
+        }
+        .institutions-block h3 {
+            color: var(--brand-cyan);
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .institutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.7rem;
+        }
+        .inst-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.35);
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #33251a;
+            transition: 0.25s;
+        }
+        .inst-item:hover {
+            border-left-color: var(--brand-orange);
+            background: rgba(255, 123, 0, 0.08);
+        }
+        .inst-name {
+            color: var(--text-light);
+            font-size: 0.92rem;
+        }
+        .inst-count {
+            color: var(--brand-gold);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            background: rgba(212, 175, 55, 0.12);
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            min-width: 50px;
+            text-align: center;
+        }
+        .inst-item.host { border-left-color: var(--brand-orange); background: rgba(255, 123, 0, 0.06); }
+        .inst-item.host .inst-name strong { color: var(--brand-orange); }
+        .inst-item.host .inst-count { color: var(--brand-orange); background: rgba(255, 123, 0, 0.15); }
 
         /* --- CATEGORÍAS (GRID) --- */
         .categories-grid {
@@ -308,6 +536,9 @@
             .hero h1 { font-size: 1.8rem; }
             .hero-details { font-size: 1rem; }
             nav ul { display: none; }
+            .venue-alert h3 { font-size: 1.3rem; }
+            .venue-alert .alert-venue { font-size: 1.8rem; }
+            .stat-number { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -321,6 +552,7 @@
             <ul>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#stats">Equipos</a></li>
                 <li><a href="#info">Información</a></li>
                 <li><a href="#registro" style="color:var(--brand-orange)">Registro</a></li>
             </ul>
@@ -347,6 +579,19 @@
     <div class="organizer-bar">
         ORGANIZADO POR: CLUB DE ROBÓTICA LLANEROS | ITSRLL
     </div>
+
+    <!-- ANUNCIO DE CAMBIO DE SEDE -->
+    <section class="venue-alert">
+        <span class="alert-badge"><i class="fas fa-bullhorn"></i> &nbsp;AVISO IMPORTANTE</span>
+        <h3>Cambio de Sede Oficial</h3>
+        <div class="alert-venue">Salón "Mandala"</div>
+        <p class="alert-location">
+            <i class="fas fa-map-marker-alt"></i>Guadalupe Victoria, Durango
+        </p>
+        <p style="margin-top: 0.8rem; color: #ccc; font-size: 0.95rem;">
+            Toda la competencia se realizará en esta nueva sede. Consulta la ubicación más abajo.
+        </p>
+    </section>
 
     <section id="categorias" class="section-padding">
         <h2 class="section-title">Categorías <span class="western-font">de Competencia</span></h2>
@@ -411,6 +656,115 @@
         </div>
     </section>
 
+    <!-- SECCIÓN DE ESTADÍSTICAS DE REGISTRO -->
+    <section id="stats" class="section-padding stats-section">
+        <p class="stats-eyebrow">REGISTRO OFICIAL · CONVOCATORIA 2026</p>
+        <h2 class="section-title">Equipos <span class="western-font">Inscritos</span></h2>
+
+        <!-- 4 indicadores principales -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-flag-checkered"></i></div>
+                <div class="stat-number">65</div>
+                <div class="stat-label">Equipos Registrados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number">173</div>
+                <div class="stat-label">Participantes Totales</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-university"></i></div>
+                <div class="stat-number">11</div>
+                <div class="stat-label">Instituciones</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                <div class="stat-number">3</div>
+                <div class="stat-label">Categorías</div>
+            </div>
+        </div>
+
+        <!-- Equipos por categoría -->
+        <h3 style="text-align:center; color: var(--text-light); font-size:1.1rem; letter-spacing:3px; margin-bottom: 1.5rem;">
+            <i class="fas fa-chart-bar" style="color: var(--brand-cyan); margin-right: 10px;"></i>EQUIPOS POR CATEGORÍA
+        </h3>
+        <div class="category-stats">
+            <div class="cat-stat">
+                <div class="cat-stat-name">
+                    Fútbol Sumo
+                    <small>Semi-Pro</small>
+                </div>
+                <div class="cat-stat-num">34</div>
+            </div>
+            <div class="cat-stat">
+                <div class="cat-stat-name">
+                    Seguidor de Línea
+                    <small>Amateur</small>
+                </div>
+                <div class="cat-stat-num">18</div>
+            </div>
+            <div class="cat-stat">
+                <div class="cat-stat-name">
+                    MiniSumo
+                    <small>Semi-Pro</small>
+                </div>
+                <div class="cat-stat-num">13</div>
+            </div>
+        </div>
+
+        <!-- Instituciones de procedencia -->
+        <div class="institutions-block">
+            <h3><i class="fas fa-map-pin" style="margin-right: 8px;"></i>INSTITUCIONES DE PROCEDENCIA</h3>
+            <div class="institutions-grid">
+                <div class="inst-item host">
+                    <span class="inst-name"><strong>ITS Región de los Llanos (ITSRLL)</strong> <small style="color:#999; display:block; font-size:0.75rem;">incluye Club de Robótica Llaneros</small></span>
+                    <span class="inst-count">35</span>
+                </div>
+                <div class="inst-item">
+                    <span class="inst-name">CECyTED 09 Lerdo</span>
+                    <span class="inst-count">7</span>
+                </div>
+                <div class="inst-item">
+                    <span class="inst-name">ITS Santiago Papasquiaro</span>
+                    <span class="inst-count">5</span>
+                </div>
+                <div class="inst-item">
+                    <span class="inst-name">ITS Santa María de El Oro</span>
+                    <span class="inst-count">3</span>
+                </div>
+                <div class="inst-item">
+                    <span class="inst-name">CBTIS 89</span>
+                    <span class="inst-count">3</span>
+                </div>
+                <div class="inst-item">
+                    <span class="inst-name">COBAED 19 Santa Clara</span>
+                    <span class="inst-count">3</span>
+                </div>
+                <div class="inst-item">
+                    <span class="inst-name">ITS Zacatecas Occidente</span>
+                    <span class="inst-count">2</span>
+                </div>
+                <div class="inst-item">
+                    <span class="inst-name">COBAED 24 Simón Bolívar</span>
+                    <span class="inst-count">2</span>
+                </div>
+                <div class="inst-item">
+                    <span class="inst-name">CBTIS #42</span>
+                    <span class="inst-count">2</span>
+                </div>
+                <div class="inst-item">
+                    <span class="inst-name">GSJ</span>
+                    <span class="inst-count">2</span>
+                </div>
+                <div class="inst-item">
+                    <span class="inst-name">UTD</span>
+                    <span class="inst-count">1</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="info" class="section-padding" style="background: #150f0a;">
         <h2 class="section-title">Detalles del Evento</h2>
         
@@ -419,7 +773,7 @@
                 <i class="fas fa-university info-icon"></i>
                 <div>
                     <h4>Sede Oficial</h4>
-                    <p>(Por definir)</p>
+                    <p style="color: var(--brand-gold); font-weight: bold;">Salón "Mandala"</p>
                     <p>Guadalupe Victoria, Durango.</p>
                 </div>
             </div>
@@ -440,7 +794,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 30px; max-width: 100%; overflow: hidden;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d454.0069165466031!2d-104.11496870219707!3d24.4488655047069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869af1003df1f683%3A0xd5b67da22c1a51f7!2sSalon%20El%20Ganadero!5e0!3m2!1ses-419!2smx!4v1771815725721!5m2!1ses-419!2smx" width="600" height="450" style="border:0; max-width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3632.1914418805877!2d-104.12802242399806!3d24.444142461788704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869af06b12601721%3A0xf0f9a86ed563307a!2sSalon%20%22Mandala%22!5e0!3m2!1ses-419!2smx!4v1778871736615!5m2!1ses-419!2smx" width="600" height="450" style="border:0; max-width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
     </section>
